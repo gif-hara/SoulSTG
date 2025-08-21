@@ -2,7 +2,7 @@ using R3;
 using R3.Triggers;
 using UnityEngine;
 
-namespace SoulLike.ActorControllers.Abilities
+namespace SoulSTG.ActorControllers.Abilities
 {
     public class ActorMovement : IActorAbility
     {

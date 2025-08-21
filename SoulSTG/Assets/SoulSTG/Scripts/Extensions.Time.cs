@@ -4,7 +4,7 @@ using System.Threading;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-namespace SoulLike
+namespace SoulSTG
 {
     public static partial class Extensions
     {

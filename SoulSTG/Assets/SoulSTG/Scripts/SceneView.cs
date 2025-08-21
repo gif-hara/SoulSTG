@@ -1,7 +1,7 @@
-using SoulLike.ActorControllers;
+using SoulSTG.ActorControllers;
 using UnityEngine;
 
-namespace SoulLike
+namespace SoulSTG
 {
     public class SceneView : MonoBehaviour
     {

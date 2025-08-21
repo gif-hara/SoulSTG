@@ -1,8 +1,8 @@
 using System.Threading;
-using SoulLike.ActorControllers.Brains;
+using SoulSTG.ActorControllers.Brains;
 using UnityEngine;
 
-namespace SoulLike.ActorControllers.Abilities
+namespace SoulSTG.ActorControllers.Abilities
 {
     public sealed class ActorBrain : IActorAbility
     {

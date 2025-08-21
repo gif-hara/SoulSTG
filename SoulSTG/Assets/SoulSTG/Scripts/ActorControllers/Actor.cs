@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
-using SoulLike.ActorControllers.Abilities;
+using SoulSTG.ActorControllers.Abilities;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-namespace SoulLike.ActorControllers
+namespace SoulSTG.ActorControllers
 {
     public class Actor : MonoBehaviour
     {

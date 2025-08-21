@@ -1,7 +1,7 @@
 using Unity.Cinemachine;
 using UnityEngine;
 
-namespace SoulLike
+namespace SoulSTG
 {
     public class WorldCameraController : MonoBehaviour
     {

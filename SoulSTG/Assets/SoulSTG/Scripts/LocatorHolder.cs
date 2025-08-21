@@ -2,7 +2,7 @@ using System;
 using HK;
 using UnityEngine;
 
-namespace SoulLike
+namespace SoulSTG
 {
     public class LocatorHolder : MonoBehaviour
     {

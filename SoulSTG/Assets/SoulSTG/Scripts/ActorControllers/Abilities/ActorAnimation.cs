@@ -4,7 +4,7 @@ using R3.Triggers;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-namespace SoulLike.ActorControllers.Abilities
+namespace SoulSTG.ActorControllers.Abilities
 {
     public sealed class ActorAnimation : IActorAbility
     {

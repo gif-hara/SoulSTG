@@ -2,12 +2,12 @@ using System.Threading;
 using HK;
 using R3;
 using R3.Triggers;
-using SoulLike.ActorControllers.Abilities;
-using SoulLike.MasterDataSystem;
+using SoulSTG.ActorControllers.Abilities;
+using SoulSTG.MasterDataSystem;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace SoulLike.ActorControllers.Brains
+namespace SoulSTG.ActorControllers.Brains
 {
     public sealed class Player : IActorBrain
     {

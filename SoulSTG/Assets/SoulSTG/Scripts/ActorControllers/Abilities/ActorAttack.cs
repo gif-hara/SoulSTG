@@ -2,7 +2,7 @@ using System.Threading;
 using R3;
 using UnityEngine;
 
-namespace SoulLike.ActorControllers.Abilities
+namespace SoulSTG.ActorControllers.Abilities
 {
     public sealed class ActorAttack : IActorAbility
     {

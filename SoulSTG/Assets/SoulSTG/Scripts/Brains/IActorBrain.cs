@@ -1,6 +1,6 @@
 using System.Threading;
 
-namespace SoulLike.ActorControllers.Brains
+namespace SoulSTG.ActorControllers.Brains
 {
     public interface IActorBrain
     {

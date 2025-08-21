@@ -1,4 +1,4 @@
-namespace SoulLike.ActorControllers.Abilities
+namespace SoulSTG.ActorControllers.Abilities
 {
     public interface IActorAbility
     {

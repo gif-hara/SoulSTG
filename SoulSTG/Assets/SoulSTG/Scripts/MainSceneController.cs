@@ -1,11 +1,11 @@
-using SoulLike.ActorControllers;
-using SoulLike.ActorControllers.Abilities;
-using SoulLike.ActorControllers.Brains;
-using SoulLike.MasterDataSystem;
+using SoulSTG.ActorControllers;
+using SoulSTG.ActorControllers.Abilities;
+using SoulSTG.ActorControllers.Brains;
+using SoulSTG.MasterDataSystem;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace SoulLike
+namespace SoulSTG
 {
     public class MainSceneController : MonoBehaviour
     {

@@ -1,8 +1,8 @@
 using UnityEngine;
 
-namespace SoulLike.MasterDataSystem
+namespace SoulSTG.MasterDataSystem
 {
-    [CreateAssetMenu(fileName = "MasterData", menuName = "SoulLike/MasterData")]
+    [CreateAssetMenu(fileName = "MasterData", menuName = "SoulSTG/MasterData")]
     public class MasterData : ScriptableObject
     {
         [field: SerializeField]

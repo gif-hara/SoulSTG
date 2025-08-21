@@ -1,7 +1,7 @@
 using HK;
 using UnityEngine;
 
-namespace SoulLike
+namespace SoulSTG
 {
     public readonly struct AnimatorParameter
     {

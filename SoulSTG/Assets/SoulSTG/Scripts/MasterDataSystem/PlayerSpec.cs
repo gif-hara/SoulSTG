@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace SoulLike.MasterDataSystem
+namespace SoulSTG.MasterDataSystem
 {
     [System.Serializable]
     public sealed class PlayerSpec

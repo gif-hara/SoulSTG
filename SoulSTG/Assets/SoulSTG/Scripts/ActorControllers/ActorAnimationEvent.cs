@@ -1,8 +1,8 @@
 using HK;
-using SoulLike.ActorControllers.Abilities;
+using SoulSTG.ActorControllers.Abilities;
 using UnityEngine;
 
-namespace SoulLike.ActorControllers
+namespace SoulSTG.ActorControllers
 {
     public class ActorAnimationEvent : MonoBehaviour
     {
