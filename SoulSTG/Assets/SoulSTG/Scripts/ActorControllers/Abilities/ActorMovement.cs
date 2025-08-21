@@ -8,7 +8,7 @@ namespace SoulSTG.ActorControllers.Abilities
     {
         private Actor actor;
 
-        private Vector3 velocity;
+        private Vector2 velocity;
 
         public Quaternion TargetRotation { get; private set; }
 
@@ -25,7 +25,7 @@ namespace SoulSTG.ActorControllers.Abilities
 
         public readonly ReactiveProperty<bool> CanRotateFromEvent = new(true);
 
-        public void Move(Vector3 velocity)
+        public void Move(Vector2 velocity)
         {
             this.velocity = velocity;
         }
@@ -53,18 +53,17 @@ namespace SoulSTG.ActorControllers.Abilities
                 .Subscribe(this, static (_, @this) =>
                 {
                     var deltaTime = @this.actor.GetAbility<ActorTime>().Time.deltaTime;
-                    if (@this.velocity == Vector3.zero || !@this.CanMove.Value)
+                    if (@this.velocity == Vector2.zero || !@this.CanMove.Value)
                     {
                         @this.isMoving.Value = false;
                     }
                     else
                     {
-                        @this.actor.transform.position += @this.velocity * deltaTime;
+                        @this.actor.transform.position += (Vector3)@this.velocity * deltaTime;
                         @this.isMoving.Value = true;
                     }
-                    @this.velocity = Vector3.zero;
+                    @this.velocity = Vector2.zero;
                     var position = @this.actor.transform.position;
-                    position.y = 0.0f;
                     @this.actor.transform.position = position;
                     @this.actor.transform.rotation = @this.TargetRotation;
                 })
