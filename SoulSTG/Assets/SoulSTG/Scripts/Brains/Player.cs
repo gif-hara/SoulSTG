@@ -37,15 +37,7 @@ namespace SoulSTG.ActorControllers.Brains
                 {
                     var (@this, actor) = t;
                     var moveInput = @this.playerInput.actions["Move"].ReadValue<Vector2>();
-                    var camTransform = @this.camera.transform;
-                    var forward = camTransform.forward;
-                    var right = camTransform.right;
-                    forward.y = 0;
-                    right.y = 0;
-                    forward.Normalize();
-                    right.Normalize();
-                    var moveVelocity = right * moveInput.x + forward * moveInput.y;
-                    @this.actorMovement.Move(moveVelocity * @this.playerSpec.MoveSpeed);
+                    @this.actorMovement.Move(moveInput * @this.playerSpec.MoveSpeed);
                 })
                 .RegisterTo(cancellationToken);
         }
