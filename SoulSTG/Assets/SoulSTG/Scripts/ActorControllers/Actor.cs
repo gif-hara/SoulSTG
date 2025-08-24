@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using HK;
 using SoulSTG.ActorControllers.Abilities;
 using UnityEngine;
 using UnityEngine.Assertions;
@@ -8,6 +9,9 @@ namespace SoulSTG.ActorControllers
 {
     public class Actor : MonoBehaviour
     {
+        [field: SerializeField]
+        public HKDocument Document { get; private set; }
+
         private readonly Dictionary<Type, IActorAbility> abilities = new();
 
         public T AddAbility<T>() where T : IActorAbility, new()
