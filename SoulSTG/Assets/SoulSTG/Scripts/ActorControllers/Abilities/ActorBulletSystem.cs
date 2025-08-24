@@ -1,19 +1,29 @@
-using UnityEngine;
+using HK;
+using UnityEngine.Assertions;
 
-namespace SoulSTG
+namespace SoulSTG.ActorControllers.Abilities
 {
-    public class ActorBulletSystem : MonoBehaviour
+    public class ActorBulletSystem : IActorAbility
     {
-        // Start is called once before the first execution of Update after the MonoBehaviour is created
-        void Start()
-        {
+        private Actor actor;
 
+        private GameObjectPool gameObjectPool;
+
+        public Actor bulletPrefab;
+
+        public void Activate(Actor actor)
+        {
+            this.actor = actor;
+            gameObjectPool = TinyServiceLocator.Resolve<GameObjectPool>();
         }
 
-        // Update is called once per frame
-        void Update()
+        public bool TryFire()
         {
-
+            var bullet = gameObjectPool.Rent(bulletPrefab);
+            Assert.IsNotNull(bullet);
+            bullet.transform.position = actor.transform.position;
+            bullet.transform.rotation = actor.transform.rotation;
+            return true;
         }
     }
 }
