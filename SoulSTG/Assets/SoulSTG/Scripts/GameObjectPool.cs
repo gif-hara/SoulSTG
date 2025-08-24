@@ -63,9 +63,9 @@ namespace SoulSTG
             pool.Release(obj.gameObject);
         }
 
-        public CancellationToken GetLifeTimeToken(GameObject obj)
+        public CancellationToken GetLifeTimeToken(Component component)
         {
-            if (!lifeTimeTokens.TryGetValue(obj, out var tokenSource))
+            if (!lifeTimeTokens.TryGetValue(component.gameObject, out var tokenSource))
             {
                 Assert.IsNotNull(tokenSource);
                 return CancellationToken.None;
