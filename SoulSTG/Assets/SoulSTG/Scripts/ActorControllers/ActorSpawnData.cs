@@ -1,3 +1,5 @@
+using SoulSTG.ActorControllers.Modifiers;
+using TNRD;
 using UnityEngine;
 
 namespace SoulSTG.ActorControllers
@@ -7,5 +9,8 @@ namespace SoulSTG.ActorControllers
     {
         [field: SerializeField]
         public Actor ActorPrefab { get; private set; }
+
+        [field: SerializeField]
+        public SerializableInterface<IActorModifier>[] Modifiers { get; private set; }
     }
 }
