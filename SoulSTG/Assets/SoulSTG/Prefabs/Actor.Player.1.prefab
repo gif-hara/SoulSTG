@@ -67,12 +67,17 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5019848971544907151, guid: 1123ebf19215ce841ae707a10adff862, type: 3}
   m_PrefabInstance: {fileID: 2627372586980776633}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 8916185700495064808}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6d4641b9716b4dd4681d4066b3823591, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &8916185700495064808 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6902587579967366225, guid: 1123ebf19215ce841ae707a10adff862, type: 3}
+  m_PrefabInstance: {fileID: 2627372586980776633}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5609698645327861690
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -127,7 +132,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5052959153001579994, guid: 9c7a114fbff3cce41a00154c8c8b3b6e, type: 3}
       propertyPath: m_Name
-      value: Actor.1
+      value: Actor.Player.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770438711394393233, guid: 9c7a114fbff3cce41a00154c8c8b3b6e, type: 3}
+      propertyPath: elements.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770438711394393233, guid: 9c7a114fbff3cce41a00154c8c8b3b6e, type: 3}
+      propertyPath: elements.Array.data[0].document
+      value: 
+      objectReference: {fileID: 8916185700495064808}
+    - target: {fileID: 6770438711394393233, guid: 9c7a114fbff3cce41a00154c8c8b3b6e, type: 3}
+      propertyPath: elements.Array.data[0].overrideName
+      value: SceneView
       objectReference: {fileID: 0}
     - target: {fileID: 6997531424759462653, guid: 9c7a114fbff3cce41a00154c8c8b3b6e, type: 3}
       propertyPath: m_IsKinematic
