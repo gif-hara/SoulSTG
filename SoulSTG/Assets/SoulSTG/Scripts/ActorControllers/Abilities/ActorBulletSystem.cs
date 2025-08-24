@@ -1,5 +1,6 @@
 using Cysharp.Threading.Tasks;
 using HK;
+using SoulSTG.BarrageSystems;
 using UnityEngine.Assertions;
 
 namespace SoulSTG.ActorControllers.Abilities
@@ -10,9 +11,7 @@ namespace SoulSTG.ActorControllers.Abilities
 
         private GameObjectPool gameObjectPool;
 
-        public ActorSpawnData SpawnData;
-
-        private readonly Container cachedContainer = new();
+        public BarrageSpawnData BarrageSpawnData;
 
         public void Activate(Actor actor)
         {
@@ -22,7 +21,7 @@ namespace SoulSTG.ActorControllers.Abilities
 
         public bool TryFire()
         {
-            SpawnData.SpawnAsync(actor, cachedContainer).Forget();
+            BarrageSpawnData.SpawnAsync(actor).Forget();
             return true;
         }
     }

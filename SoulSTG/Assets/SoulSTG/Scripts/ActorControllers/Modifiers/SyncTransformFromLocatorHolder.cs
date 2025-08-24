@@ -21,7 +21,7 @@ namespace SoulSTG.ActorControllers.Modifiers
         [field: SerializeField]
         private bool syncRotation;
 
-        public UniTask InvokeAsync(Actor owner, Actor spawnedActor, Container container, CancellationToken cancellationToken)
+        public UniTask InvokeAsync(Actor owner, Actor spawnedActor, CancellationToken cancellationToken)
         {
             var locator = owner.Document.Q<SceneView>(sceneViewName).LocatorHolder.Get(locatorName);
             Assert.IsNotNull(locator, $"Locator '{locatorName}' not found in SceneView '{sceneViewName}'.");

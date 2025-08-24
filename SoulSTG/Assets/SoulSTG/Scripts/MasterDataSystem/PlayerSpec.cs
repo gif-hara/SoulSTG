@@ -1,4 +1,5 @@
 using SoulSTG.ActorControllers;
+using SoulSTG.BarrageSystems;
 using UnityEngine;
 
 namespace SoulSTG.MasterDataSystem
@@ -13,6 +14,6 @@ namespace SoulSTG.MasterDataSystem
         public float RotateSpeed { get; private set; }
 
         [field: SerializeField]
-        public ActorSpawnData ActorSpawnData { get; private set; }
+        public BarrageSpawnData BarrageSpawnData { get; private set; }
     }
 }

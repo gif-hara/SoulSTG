@@ -5,6 +5,6 @@ namespace SoulSTG.ActorControllers.Modifiers
 {
     public interface IActorModifier
     {
-        UniTask InvokeAsync(Actor owner, Actor spawnedActor, Container container, CancellationToken cancellationToken);
+        UniTask InvokeAsync(Actor owner, Actor spawnedActor, CancellationToken cancellationToken);
     }
 }

@@ -15,4 +15,4 @@ MonoBehaviour:
   <PlayerSpec>k__BackingField:
     <MoveSpeed>k__BackingField: 10
     <RotateSpeed>k__BackingField: 0
-    <ActorSpawnData>k__BackingField: {fileID: 11400000, guid: c7b17161eef546c4f9c226800fdc7c83, type: 2}
+    <BarrageSpawnData>k__BackingField: {fileID: 11400000, guid: ae281bc5a13a00f45958fe15b41a0ca5, type: 2}

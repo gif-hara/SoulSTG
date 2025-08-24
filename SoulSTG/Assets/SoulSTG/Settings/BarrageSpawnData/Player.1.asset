@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbf5c826c430d784689ff2dff3b01f21, type: 3}
+  m_Name: Player.1
+  m_EditorClassIdentifier: 
+  <SpawnPointSelector>k__BackingField:
+    mode: 1
+    unityReference: {fileID: 0}
+    rawReference:
+      rid: 6255641175016866109
+  <Modifiers>k__BackingField:
+  - mode: 1
+    unityReference: {fileID: 0}
+    rawReference:
+      rid: 6255641175016866110
+  references:
+    version: 2
+    RefIds:
+    - rid: 6255641175016866109
+      type: {class: FromSceneViewLocatorHolder, ns: SoulSTG.BarrageSystems.SpawnPointSelectors, asm: Assembly-CSharp}
+      data:
+        sceneViewName: SceneView
+        locatorName: BulletFirePoint.1
+    - rid: 6255641175016866110
+      type: {class: SpawnActor, ns: SoulSTG.BarrageSystems.Modifiers, asm: Assembly-CSharp}
+      data:
+        actorSpawnData: {fileID: 11400000, guid: c7b17161eef546c4f9c226800fdc7c83, type: 2}

@@ -33,7 +33,7 @@ namespace SoulSTG.ActorControllers.Brains
             actor.AddAbility<ActorTime>();
             actorMovement = actor.AddAbility<ActorMovement>();
             actorBulletSystem = actor.AddAbility<ActorBulletSystem>();
-            actorBulletSystem.SpawnData = playerSpec.ActorSpawnData;
+            actorBulletSystem.BarrageSpawnData = playerSpec.BarrageSpawnData;
 
             actorMovement.SetRotationSpeed(playerSpec.RotateSpeed);
             actor.UpdateAsObservable()
