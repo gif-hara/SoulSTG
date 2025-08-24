@@ -15,3 +15,4 @@ MonoBehaviour:
   <PlayerSpec>k__BackingField:
     <MoveSpeed>k__BackingField: 10
     <RotateSpeed>k__BackingField: 0
+    <bulletPrefab>k__BackingField: {fileID: 6434016922464494578, guid: a3e48297f51db8a4e87a079163696cc7, type: 3}
