@@ -46,5 +46,10 @@ namespace SoulSTG
             value = default!;
             return false;
         }
+
+        public void Clear()
+        {
+            map.Clear();
+        }
     }
 }
