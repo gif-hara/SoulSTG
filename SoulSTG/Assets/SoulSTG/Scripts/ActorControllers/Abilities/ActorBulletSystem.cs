@@ -22,7 +22,7 @@ namespace SoulSTG.ActorControllers.Abilities
 
         public bool TryFire()
         {
-            SpawnData.SpawnAsync(cachedContainer).Forget();
+            SpawnData.SpawnAsync(actor, cachedContainer).Forget();
             return true;
         }
     }
