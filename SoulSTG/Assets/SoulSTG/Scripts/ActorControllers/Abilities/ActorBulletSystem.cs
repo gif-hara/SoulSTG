@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using HK;
 using UnityEngine.Assertions;
 
@@ -11,6 +12,8 @@ namespace SoulSTG.ActorControllers.Abilities
 
         public ActorSpawnData SpawnData;
 
+        private readonly Container cachedContainer = new();
+
         public void Activate(Actor actor)
         {
             this.actor = actor;
@@ -19,10 +22,7 @@ namespace SoulSTG.ActorControllers.Abilities
 
         public bool TryFire()
         {
-            var bullet = SpawnData.Spawn();
-            Assert.IsNotNull(bullet);
-            bullet.transform.position = actor.transform.position;
-            bullet.transform.rotation = actor.transform.rotation;
+            SpawnData.SpawnAsync(cachedContainer).Forget();
             return true;
         }
     }
