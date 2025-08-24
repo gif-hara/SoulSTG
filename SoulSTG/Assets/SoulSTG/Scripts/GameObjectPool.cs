@@ -20,7 +20,10 @@ namespace SoulSTG
                     createFunc: () => Object.Instantiate(prefab.gameObject),
                     actionOnGet: go =>
                     {
-                        Assert.IsNull(lifeTimeTokens[go]);
+                        if (lifeTimeTokens.TryGetValue(go, out var existingToken))
+                        {
+                            Assert.IsNull(existingToken);
+                        }
                         lifeTimeTokens[go] = new CancellationTokenSource();
                         go.SetActive(true);
                     },
