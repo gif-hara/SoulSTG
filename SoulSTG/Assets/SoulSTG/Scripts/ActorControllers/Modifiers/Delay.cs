@@ -1,9 +1,11 @@
+using System;
 using System.Threading;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 namespace SoulSTG.ActorControllers.Modifiers
 {
+    [Serializable]
     public sealed class Delay : IActorModifier
     {
         [field: SerializeField]
