@@ -17,6 +17,10 @@ MonoBehaviour:
   - mode: 1
     unityReference: {fileID: 0}
     rawReference:
+      rid: 6255641175016866091
+  - mode: 1
+    unityReference: {fileID: 0}
+    rawReference:
       rid: 6255641175016866074
   - mode: 1
     unityReference: {fileID: 0}
@@ -32,3 +36,10 @@ MonoBehaviour:
     - rid: 6255641175016866075
       type: {class: ReleaseToPool, ns: SoulSTG.ActorControllers.Modifiers, asm: Assembly-CSharp}
       data: 
+    - rid: 6255641175016866091
+      type: {class: SyncTransformFromLocatorHolder, ns: SoulSTG.ActorControllers.Modifiers, asm: Assembly-CSharp}
+      data:
+        sceneViewName: SceneView
+        locatorName: BulletFirePoint.1
+        syncPosition: 1
+        syncRotation: 1
