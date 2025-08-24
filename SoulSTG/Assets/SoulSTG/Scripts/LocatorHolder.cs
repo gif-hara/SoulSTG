@@ -18,16 +18,16 @@ namespace SoulSTG
         public class Element
         {
             [SerializeField]
-            private string name;
-
-            [SerializeField]
             private Transform transform;
             public Transform Transform => transform;
+
+            [SerializeField]
+            private string overrideName;
 
             [Serializable]
             public class DictionaryList : DictionaryList<string, Element>
             {
-                public DictionaryList() : base(x => x.name)
+                public DictionaryList() : base(x => string.IsNullOrEmpty(x.overrideName) ? x.transform.name : x.overrideName)
                 {
                 }
             }
