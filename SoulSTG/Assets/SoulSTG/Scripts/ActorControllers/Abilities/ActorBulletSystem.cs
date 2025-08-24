@@ -9,7 +9,7 @@ namespace SoulSTG.ActorControllers.Abilities
 
         private GameObjectPool gameObjectPool;
 
-        public Actor bulletPrefab;
+        public ActorSpawnData SpawnData;
 
         public void Activate(Actor actor)
         {
@@ -19,7 +19,7 @@ namespace SoulSTG.ActorControllers.Abilities
 
         public bool TryFire()
         {
-            var bullet = gameObjectPool.Rent(bulletPrefab);
+            var bullet = SpawnData.Spawn();
             Assert.IsNotNull(bullet);
             bullet.transform.position = actor.transform.position;
             bullet.transform.rotation = actor.transform.rotation;
