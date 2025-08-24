@@ -19,6 +19,8 @@ namespace SoulSTG.ActorControllers.Brains
 
         private ActorMovement actorMovement;
 
+        private ActorBulletSystem actorBulletSystem;
+
         public Player(PlayerInput playerInput, Camera camera, PlayerSpec playerSpec)
         {
             this.playerInput = playerInput;
@@ -30,6 +32,8 @@ namespace SoulSTG.ActorControllers.Brains
         {
             actor.AddAbility<ActorTime>();
             actorMovement = actor.AddAbility<ActorMovement>();
+            actorBulletSystem = actor.AddAbility<ActorBulletSystem>();
+            actorBulletSystem.bulletPrefab = playerSpec.bulletPrefab;
 
             actorMovement.SetRotationSpeed(playerSpec.RotateSpeed);
             actor.UpdateAsObservable()
@@ -38,6 +42,13 @@ namespace SoulSTG.ActorControllers.Brains
                     var (@this, actor) = t;
                     var moveInput = @this.playerInput.actions["Move"].ReadValue<Vector2>();
                     @this.actorMovement.Move(moveInput * @this.playerSpec.MoveSpeed);
+                })
+                .RegisterTo(cancellationToken);
+            playerInput.actions["Fire"].OnPerformedAsObservable()
+                .Subscribe((this, actor), static (_, t) =>
+                {
+                    var (@this, actor) = t;
+                    @this.actorBulletSystem.TryFire();
                 })
                 .RegisterTo(cancellationToken);
         }
