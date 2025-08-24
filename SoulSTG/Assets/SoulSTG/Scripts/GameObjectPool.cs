@@ -12,7 +12,11 @@ namespace SoulSTG
 
         private readonly Dictionary<GameObject, ObjectPool<GameObject>> pools = new();
 
-        public T Rent<T>(T prefab) where T : Component
+        private readonly Dictionary<GameObject, ObjectPool<GameObject>> spawnedObjectPoolMap = new();
+
+        private readonly Dictionary<GameObject, Component> componentCaches = new();
+
+        public (T, CancellationToken) Rent<T>(T prefab) where T : Component
         {
             if (!pools.TryGetValue(prefab.gameObject, out var pool))
             {
@@ -50,12 +54,19 @@ namespace SoulSTG
             }
 
             var obj = pool.Get();
-            return obj.GetComponent<T>();
+            spawnedObjectPoolMap[obj] = pool;
+            if (!componentCaches.TryGetValue(obj, out var cachedComponent))
+            {
+                cachedComponent = obj.TryGetComponent<T>(out var component) ? component : null;
+                Assert.IsNotNull(cachedComponent);
+                componentCaches[obj] = cachedComponent;
+            }
+            return (cachedComponent as T, lifeTimeTokens[obj].Token);
         }
 
         public void Release<T>(T obj) where T : Component
         {
-            if (!pools.TryGetValue(obj.gameObject, out var pool))
+            if (!spawnedObjectPoolMap.TryGetValue(obj.gameObject, out var pool))
             {
                 Assert.IsNotNull(pool);
                 return;
