@@ -13,6 +13,6 @@ namespace SoulSTG.MasterDataSystem
         public float RotateSpeed { get; private set; }
 
         [field: SerializeField]
-        public Actor bulletPrefab { get; private set; }
+        public ActorSpawnData ActorSpawnData { get; private set; }
     }
 }
