@@ -1,3 +1,4 @@
+using HK;
 using SoulSTG.ActorControllers;
 using SoulSTG.ActorControllers.Abilities;
 using SoulSTG.ActorControllers.Brains;
@@ -26,6 +27,7 @@ namespace SoulSTG
 
         void Start()
         {
+            TinyServiceLocator.Register(new GameObjectPool());
             var worldCameraController = Instantiate(worldCameraControllerPrefab);
             var player = Instantiate(playerPrefab, spawnPoint.position, spawnPoint.rotation);
             var playerInput = Instantiate(playerInputPrefab);
