@@ -2,7 +2,10 @@ using UnityEngine;
 
 namespace SoulSTG.ActorControllers
 {
-    public class ActorSpawnData : MonoBehaviour
+    [CreateAssetMenu(fileName = "ActorSpawnData", menuName = "SoulSTG/ActorSpawnData")]
+    public class ActorSpawnData : ScriptableObject
     {
+        [field: SerializeField]
+        public Actor ActorPrefab { get; private set; }
     }
 }
