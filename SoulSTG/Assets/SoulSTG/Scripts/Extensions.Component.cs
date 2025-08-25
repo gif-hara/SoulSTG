@@ -1,4 +1,5 @@
 using System.Threading;
+using Cysharp.Threading.Tasks;
 using SoulSTG;
 using UnityEngine;
 
@@ -9,6 +10,9 @@ namespace HK
     /// </summary>
     public static partial class Extensions
     {
-        public static CancellationToken GetLifeTimeToken<T>(this T self) where T : Component => TinyServiceLocator.Resolve<GameObjectPool>().GetLifeTimeToken(self);
+        public static CancellationToken GetLifeTimeToken<T>(this T self) where T : Component
+        {
+            return TinyServiceLocator.Resolve<GameObjectPool>().TryGetLifeTimeToken(self, out var token) ? token : self.GetCancellationTokenOnDestroy();
+        }
     }
 }
