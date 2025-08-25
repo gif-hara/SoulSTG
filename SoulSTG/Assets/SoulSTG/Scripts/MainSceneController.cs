@@ -27,6 +27,7 @@ namespace SoulSTG
 
         void Start()
         {
+            Application.targetFrameRate = 60;
             TinyServiceLocator.Register(new GameObjectPool());
             var worldCameraController = Instantiate(worldCameraControllerPrefab);
             var player = Instantiate(playerPrefab, spawnPoint.position, spawnPoint.rotation);
