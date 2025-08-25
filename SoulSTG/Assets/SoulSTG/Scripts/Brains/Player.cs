@@ -21,6 +21,8 @@ namespace SoulSTG.ActorControllers.Brains
 
         private ActorBulletSystem actorBulletSystem;
 
+        private bool isFiring;
+
         public Player(PlayerInput playerInput, Camera camera, PlayerSpec playerSpec)
         {
             this.playerInput = playerInput;
@@ -42,13 +44,23 @@ namespace SoulSTG.ActorControllers.Brains
                     var (@this, actor) = t;
                     var moveInput = @this.playerInput.actions["Move"].ReadValue<Vector2>();
                     @this.actorMovement.Move(moveInput * @this.playerSpec.MoveSpeed);
+
+                    if (@this.isFiring)
+                    {
+                        @this.actorBulletSystem.TryFire();
+                    }
                 })
                 .RegisterTo(cancellationToken);
             playerInput.actions["Fire"].OnPerformedAsObservable()
-                .Subscribe((this, actor), static (_, t) =>
+                .Subscribe(this, static (_, @this) =>
                 {
-                    var (@this, actor) = t;
-                    @this.actorBulletSystem.TryFire();
+                    @this.isFiring = true;
+                })
+                .RegisterTo(cancellationToken);
+            playerInput.actions["Fire"].OnCanceledAsObservable()
+                .Subscribe(this, static (_, @this) =>
+                {
+                    @this.isFiring = false;
                 })
                 .RegisterTo(cancellationToken);
         }
