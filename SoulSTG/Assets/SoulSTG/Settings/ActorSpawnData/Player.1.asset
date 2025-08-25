@@ -12,12 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f56901282fae064c948f463ca9c10de, type: 3}
   m_Name: Player.1
   m_EditorClassIdentifier: 
-  <ActorPrefab>k__BackingField: {fileID: 6434016922464494578, guid: a3e48297f51db8a4e87a079163696cc7, type: 3}
   <Modifiers>k__BackingField:
   - mode: 1
     unityReference: {fileID: 0}
     rawReference:
-      rid: 6255641175016866074
+      rid: 6255641199650799699
   - mode: 1
     unityReference: {fileID: 0}
     rawReference:
@@ -25,10 +24,13 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 6255641175016866074
-      type: {class: Delay, ns: SoulSTG.ActorControllers.Modifiers, asm: Assembly-CSharp}
-      data:
-        seconds: 1
     - rid: 6255641175016866075
       type: {class: ReleaseToPool, ns: SoulSTG.ActorControllers.Modifiers, asm: Assembly-CSharp}
       data: 
+    - rid: 6255641199650799699
+      type: {class: TweenFromAngle, ns: SoulSTG.ActorControllers.Modifiers, asm: Assembly-CSharp}
+      data:
+        distance: 32
+        fixedAngle: 0
+        seconds: 0.3
+        ease: 0
