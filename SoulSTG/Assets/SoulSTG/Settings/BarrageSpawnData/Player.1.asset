@@ -21,7 +21,11 @@ MonoBehaviour:
   - mode: 1
     unityReference: {fileID: 0}
     rawReference:
-      rid: 6255641175016866110
+      rid: 6255641199650799719
+  - mode: 1
+    unityReference: {fileID: 0}
+    rawReference:
+      rid: 6255641199650799710
   references:
     version: 2
     RefIds:
@@ -30,7 +34,19 @@ MonoBehaviour:
       data:
         sceneViewName: SceneView
         locatorName: BulletFirePoint.1
-    - rid: 6255641175016866110
+    - rid: 6255641199650799710
+      type: {class: SetCoolTime, ns: SoulSTG.BarrageSystems.Modifiers, asm: Assembly-CSharp}
+      data:
+        coolTime: 0.1
+    - rid: 6255641199650799719
+      type: {class: Forget, ns: SoulSTG.BarrageSystems.Modifiers, asm: Assembly-CSharp}
+      data:
+        modifiers:
+        - mode: 1
+          unityReference: {fileID: 0}
+          rawReference:
+            rid: 6255641199650799720
+    - rid: 6255641199650799720
       type: {class: SpawnActor, ns: SoulSTG.BarrageSystems.Modifiers, asm: Assembly-CSharp}
       data:
         prefab: {fileID: 6434016922464494578, guid: a3e48297f51db8a4e87a079163696cc7, type: 3}
