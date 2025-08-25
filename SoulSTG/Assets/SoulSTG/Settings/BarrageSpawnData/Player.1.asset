@@ -33,4 +33,5 @@ MonoBehaviour:
     - rid: 6255641175016866110
       type: {class: SpawnActor, ns: SoulSTG.BarrageSystems.Modifiers, asm: Assembly-CSharp}
       data:
-        actorSpawnData: {fileID: 11400000, guid: c7b17161eef546c4f9c226800fdc7c83, type: 2}
+        prefab: {fileID: 6434016922464494578, guid: a3e48297f51db8a4e87a079163696cc7, type: 3}
+        actorModifiers: {fileID: 11400000, guid: c7b17161eef546c4f9c226800fdc7c83, type: 2}

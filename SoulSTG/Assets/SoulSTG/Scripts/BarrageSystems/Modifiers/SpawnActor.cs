@@ -9,11 +9,14 @@ namespace SoulSTG.BarrageSystems.Modifiers
     public sealed class SpawnActor : IBarrageModifier
     {
         [field: SerializeField]
-        private ActorSpawnData actorSpawnData;
+        private Actor prefab;
+
+        [field: SerializeField]
+        private ActorModifiers actorModifiers;
 
         public UniTask InvokeAsync(Actor owner, Transform spawnPoint, CancellationToken cancellationToken)
         {
-            return actorSpawnData.SpawnAsync(owner, spawnPoint.position, spawnPoint.rotation, cancellationToken);
+            return actorModifiers.SpawnAsync(owner, prefab, spawnPoint.position, spawnPoint.rotation, cancellationToken);
         }
     }
 }

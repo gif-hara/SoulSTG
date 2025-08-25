@@ -11,9 +11,9 @@ namespace HK
     /// </summary>
     public static partial class Extensions
     {
-        public static async UniTask SpawnAsync(this ActorSpawnData self, Actor owner, Vector3 position, Quaternion rotation, CancellationToken cancellationToken)
+        public static async UniTask SpawnAsync(this ActorModifiers self, Actor owner, Actor prefab, Vector3 position, Quaternion rotation, CancellationToken cancellationToken)
         {
-            var (actor, lifeScope) = TinyServiceLocator.Resolve<GameObjectPool>().Rent(self.ActorPrefab);
+            var (actor, lifeScope) = TinyServiceLocator.Resolve<GameObjectPool>().Rent(prefab);
             actor.transform.SetPositionAndRotation(position, rotation);
             var scope = CancellationTokenSource.CreateLinkedTokenSource(lifeScope, cancellationToken);
             foreach (var modifier in self.Modifiers)
