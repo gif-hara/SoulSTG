@@ -83,5 +83,16 @@ namespace SoulSTG
             }
             return tokenSource.Token;
         }
+
+        public bool TryGetLifeTimeToken(Component component, out CancellationToken token)
+        {
+            if (!lifeTimeTokens.TryGetValue(component.gameObject, out var tokenSource))
+            {
+                token = CancellationToken.None;
+                return false;
+            }
+            token = tokenSource.Token;
+            return true;
+        }
     }
 }
