@@ -37,7 +37,11 @@ MonoBehaviour:
     - rid: 6255641199650799710
       type: {class: SetCoolTime, ns: SoulSTG.BarrageSystems.Modifiers, asm: Assembly-CSharp}
       data:
-        coolTime: 0.1
+        coolTimeSelector:
+          mode: 1
+          unityReference: {fileID: 0}
+          rawReference:
+            rid: 6255641199650799727
     - rid: 6255641199650799719
       type: {class: Forget, ns: SoulSTG.BarrageSystems.Modifiers, asm: Assembly-CSharp}
       data:
@@ -51,3 +55,7 @@ MonoBehaviour:
       data:
         prefab: {fileID: 6434016922464494578, guid: a3e48297f51db8a4e87a079163696cc7, type: 3}
         actorModifiers: {fileID: 11400000, guid: c7b17161eef546c4f9c226800fdc7c83, type: 2}
+    - rid: 6255641199650799727
+      type: {class: Constant, ns: SoulSTG.ActorControllers.FloatSelectors, asm: Assembly-CSharp}
+      data:
+        value: 0.1
