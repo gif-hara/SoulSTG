@@ -10,7 +10,7 @@ namespace SoulSTG.BarrageSystems.Modifiers
 {
     public sealed class SetCoolTime : IBarrageModifier
     {
-        [field: SerializeField]
+        [field: SerializeField, ClassesOnly]
         private SerializableInterface<IFloatSelector> coolTimeSelector;
 
         public UniTask InvokeAsync(Actor owner, Transform spawnPoint, CancellationToken cancellationToken)

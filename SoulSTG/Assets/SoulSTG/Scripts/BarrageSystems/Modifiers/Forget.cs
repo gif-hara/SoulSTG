@@ -8,7 +8,7 @@ namespace SoulSTG.BarrageSystems.Modifiers
 {
     public sealed class Forget : IBarrageModifier
     {
-        [field: SerializeField]
+        [field: SerializeField, ClassesOnly]
         private SerializableInterface<IBarrageModifier>[] modifiers;
 
         public UniTask InvokeAsync(Actor owner, Transform spawnPoint, CancellationToken cancellationToken)
