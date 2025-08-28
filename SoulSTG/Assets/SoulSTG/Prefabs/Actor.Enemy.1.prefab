@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1753087771954469183}
   - component: {fileID: 9026290351790826406}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy.1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8912299282966059247}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,7 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6247088605100607909}
   - component: {fileID: 3148093349139151357}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205,6 +205,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3300501683713512241, guid: 9c7a114fbff3cce41a00154c8c8b3b6e, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4375295398095482985, guid: 9c7a114fbff3cce41a00154c8c8b3b6e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -248,6 +252,10 @@ PrefabInstance:
     - target: {fileID: 5052959153001579994, guid: 9c7a114fbff3cce41a00154c8c8b3b6e, type: 3}
       propertyPath: m_Name
       value: Actor.Enemy.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5052959153001579994, guid: 9c7a114fbff3cce41a00154c8c8b3b6e, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6770438711394393233, guid: 9c7a114fbff3cce41a00154c8c8b3b6e, type: 3}
       propertyPath: elements.Array.size
