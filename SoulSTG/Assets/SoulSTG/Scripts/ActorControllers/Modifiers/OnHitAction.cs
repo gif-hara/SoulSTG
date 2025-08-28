@@ -12,7 +12,7 @@ namespace SoulSTG.ActorControllers.Modifiers
     {
         public UniTask InvokeAsync(Actor owner, Actor spawnedActor, CancellationToken cancellationToken)
         {
-            owner.OnTriggerEnter2DAsObservable()
+            spawnedActor.OnTriggerEnter2DAsObservable()
                 .Subscribe(collision =>
                 {
                     Debug.Log("OnHitAction Triggered");
