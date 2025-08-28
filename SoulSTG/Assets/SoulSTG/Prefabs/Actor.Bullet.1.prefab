@@ -217,10 +217,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Actor.Bullet.1
       objectReference: {fileID: 0}
-    - target: {fileID: 6632969426757731322, guid: 9c7a114fbff3cce41a00154c8c8b3b6e, type: 3}
-      propertyPath: m_Constraints
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6997531424759462653, guid: 9c7a114fbff3cce41a00154c8c8b3b6e, type: 3}
       propertyPath: m_IsKinematic
       value: 1
