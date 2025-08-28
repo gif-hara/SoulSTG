@@ -15,7 +15,7 @@ namespace HK
             var spawnPoint = self.SpawnPointSelector.Value.GetSpawnPoint(owner);
             foreach (var modifier in self.Modifiers)
             {
-                await modifier.Value.InvokeAsync(owner, spawnPoint, CancellationToken.None);
+                await modifier.Value.InvokeAsync(owner, spawnPoint, owner.GetLifeTimeToken());
             }
         }
     }
