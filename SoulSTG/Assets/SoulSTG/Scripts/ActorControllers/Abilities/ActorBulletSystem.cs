@@ -14,6 +14,8 @@ namespace SoulSTG.ActorControllers.Abilities
 
         private float coolTime;
 
+        private bool isFiring;
+
         public void Activate(Actor actor)
         {
             this.actor = actor;
@@ -30,12 +32,19 @@ namespace SoulSTG.ActorControllers.Abilities
 
         public bool TryFire()
         {
-            if (coolTime > 0)
+            if (coolTime > 0 || isFiring || BarrageSpawnData == null)
             {
                 return false;
             }
-            BarrageSpawnData.SpawnAsync(actor).Forget();
+            FireAsync().Forget();
             return true;
+        }
+
+        private async UniTask FireAsync()
+        {
+            isFiring = true;
+            await BarrageSpawnData.SpawnAsync(actor);
+            isFiring = false;
         }
 
         public void SetCoolTime(float coolTime)
