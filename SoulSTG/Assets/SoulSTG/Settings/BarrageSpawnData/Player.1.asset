@@ -54,10 +54,6 @@ MonoBehaviour:
           unityReference: {fileID: 0}
           rawReference:
             rid: 6255641267460636783
-        - mode: 1
-          unityReference: {fileID: 0}
-          rawReference:
-            rid: 6255641267460636789
     - rid: 6255641267460636776
       type: {class: Constant, ns: SoulSTG.ActorControllers.FloatSelectors, asm: Assembly-CSharp}
       data:
@@ -71,16 +67,3 @@ MonoBehaviour:
       type: {class: FromActorDocument, ns: SoulSTG.BarrageSystems.SpawnPointSelectors, asm: Assembly-CSharp}
       data:
         transformName: BulletFirePoint.1
-    - rid: 6255641267460636789
-      type: {class: AddRotationSpawnPoint, ns: SoulSTG.BarrageSystems.Modifiers, asm: Assembly-CSharp}
-      data:
-        transformName: BulletFirePoint.1
-        rotationSelector:
-          mode: 1
-          unityReference: {fileID: 0}
-          rawReference:
-            rid: 6255641267460636791
-    - rid: 6255641267460636791
-      type: {class: Constant, ns: SoulSTG.ActorControllers.FloatSelectors, asm: Assembly-CSharp}
-      data:
-        value: 10

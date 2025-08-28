@@ -16,6 +16,14 @@ MonoBehaviour:
   - mode: 1
     unityReference: {fileID: 0}
     rawReference:
+      rid: 6255641267460636802
+  - mode: 1
+    unityReference: {fileID: 0}
+    rawReference:
+      rid: 6255641267460636798
+  - mode: 1
+    unityReference: {fileID: 0}
+    rawReference:
       rid: 6255641199650799699
   - mode: 1
     unityReference: {fileID: 0}
@@ -34,3 +42,10 @@ MonoBehaviour:
         fixedAngle: 0
         seconds: 0.3
         ease: 0
+    - rid: 6255641267460636798
+      type: {class: OnHitAction, ns: SoulSTG.ActorControllers.Modifiers, asm: Assembly-CSharp}
+      data: 
+    - rid: 6255641267460636802
+      type: {class: SetLayer, ns: SoulSTG.ActorControllers.Modifiers, asm: Assembly-CSharp}
+      data:
+        layerName: PlayerBullet
