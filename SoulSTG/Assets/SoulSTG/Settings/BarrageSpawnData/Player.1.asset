@@ -58,4 +58,4 @@ MonoBehaviour:
     - rid: 6255641199650799727
       type: {class: Constant, ns: SoulSTG.ActorControllers.FloatSelectors, asm: Assembly-CSharp}
       data:
-        value: 0.1
+        value: 0.05
