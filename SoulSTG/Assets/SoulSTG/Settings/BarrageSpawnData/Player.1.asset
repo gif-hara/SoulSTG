@@ -59,10 +59,6 @@ MonoBehaviour:
           unityReference: {fileID: 0}
           rawReference:
             rid: 6255641267460636767
-        - mode: 1
-          unityReference: {fileID: 0}
-          rawReference:
-            rid: 6255641267460636778
     - rid: 6255641267460636767
       type: {class: SpawnActor, ns: SoulSTG.BarrageSystems.Modifiers, asm: Assembly-CSharp}
       data:
@@ -72,15 +68,3 @@ MonoBehaviour:
       type: {class: Constant, ns: SoulSTG.ActorControllers.FloatSelectors, asm: Assembly-CSharp}
       data:
         value: 0.05
-    - rid: 6255641267460636778
-      type: {class: AddRotationSpawnPoint, ns: SoulSTG.BarrageSystems.Modifiers, asm: Assembly-CSharp}
-      data:
-        rotationSelector:
-          mode: 1
-          unityReference: {fileID: 0}
-          rawReference:
-            rid: 6255641267460636779
-    - rid: 6255641267460636779
-      type: {class: Constant, ns: SoulSTG.ActorControllers.FloatSelectors, asm: Assembly-CSharp}
-      data:
-        value: 6
