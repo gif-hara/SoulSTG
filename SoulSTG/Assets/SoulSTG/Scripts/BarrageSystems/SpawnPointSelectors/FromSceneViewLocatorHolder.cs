@@ -5,17 +5,14 @@ using UnityEngine;
 namespace SoulSTG.BarrageSystems.SpawnPointSelectors
 {
     [Serializable]
-    public sealed class FromSceneViewLocatorHolder : ISpawnPointSelector
+    public sealed class FromActorDocument : ISpawnPointSelector
     {
         [field: SerializeField]
-        private string sceneViewName = "SceneView";
-
-        [field: SerializeField]
-        private string locatorName;
+        private string transformName;
 
         public Transform GetSpawnPoint(Actor owner)
         {
-            return owner.Document.Q<SceneView>(sceneViewName).LocatorHolder.Get(locatorName);
+            return owner.Document.Q<Transform>(transformName);
         }
     }
 }

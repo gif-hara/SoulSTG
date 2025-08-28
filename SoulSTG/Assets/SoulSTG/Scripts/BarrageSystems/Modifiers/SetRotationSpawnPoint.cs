@@ -9,12 +9,15 @@ namespace SoulSTG.BarrageSystems.Modifiers
 {
     public sealed class SetRotationSpawnPoint : IBarrageModifier
     {
+        [field: SerializeField]
+        private string transformName;
+
         [field: SerializeField, ClassesOnly]
         private SerializableInterface<IFloatSelector> rotationSelector;
 
         public UniTask InvokeAsync(Actor owner, Transform spawnPoint, CancellationToken cancellationToken)
         {
-            spawnPoint.rotation = Quaternion.Euler(0f, 0f, rotationSelector.Value.GetValue(owner));
+            owner.Document.Q<Transform>(transformName).rotation = Quaternion.Euler(0f, 0f, rotationSelector.Value.GetValue(owner));
             return UniTask.CompletedTask;
         }
     }
