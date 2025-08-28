@@ -21,7 +21,11 @@ MonoBehaviour:
   - mode: 1
     unityReference: {fileID: 0}
     rawReference:
-      rid: 6255641199650799719
+      rid: 6255641267460636774
+  - mode: 1
+    unityReference: {fileID: 0}
+    rawReference:
+      rid: 6255641267460636758
   - mode: 1
     unityReference: {fileID: 0}
     rawReference:
@@ -41,21 +45,58 @@ MonoBehaviour:
           mode: 1
           unityReference: {fileID: 0}
           rawReference:
-            rid: 6255641199650799727
-    - rid: 6255641199650799719
+            rid: 6255641267460636776
+    - rid: 6255641267460636758
+      type: {class: Loop, ns: SoulSTG.BarrageSystems.Modifiers, asm: Assembly-CSharp}
+      data:
+        count: 30
+        modifiers:
+        - mode: 1
+          unityReference: {fileID: 0}
+          rawReference:
+            rid: 6255641267460636766
+    - rid: 6255641267460636766
       type: {class: Forget, ns: SoulSTG.BarrageSystems.Modifiers, asm: Assembly-CSharp}
       data:
         modifiers:
         - mode: 1
           unityReference: {fileID: 0}
           rawReference:
-            rid: 6255641199650799720
-    - rid: 6255641199650799720
+            rid: 6255641267460636767
+        - mode: 1
+          unityReference: {fileID: 0}
+          rawReference:
+            rid: 6255641267460636778
+    - rid: 6255641267460636767
       type: {class: SpawnActor, ns: SoulSTG.BarrageSystems.Modifiers, asm: Assembly-CSharp}
       data:
         prefab: {fileID: 6434016922464494578, guid: a3e48297f51db8a4e87a079163696cc7, type: 3}
         actorModifiers: {fileID: 11400000, guid: c7b17161eef546c4f9c226800fdc7c83, type: 2}
-    - rid: 6255641199650799727
+    - rid: 6255641267460636774
+      type: {class: SetRotationSpawnPoint, ns: SoulSTG.BarrageSystems.Modifiers, asm: Assembly-CSharp}
+      data:
+        rotationSelector:
+          mode: 1
+          unityReference: {fileID: 0}
+          rawReference:
+            rid: 6255641267460636775
+    - rid: 6255641267460636775
+      type: {class: Constant, ns: SoulSTG.ActorControllers.FloatSelectors, asm: Assembly-CSharp}
+      data:
+        value: 0
+    - rid: 6255641267460636776
       type: {class: Constant, ns: SoulSTG.ActorControllers.FloatSelectors, asm: Assembly-CSharp}
       data:
         value: 0.05
+    - rid: 6255641267460636778
+      type: {class: AddRotationSpawnPoint, ns: SoulSTG.BarrageSystems.Modifiers, asm: Assembly-CSharp}
+      data:
+        rotationSelector:
+          mode: 1
+          unityReference: {fileID: 0}
+          rawReference:
+            rid: 6255641267460636779
+    - rid: 6255641267460636779
+      type: {class: Constant, ns: SoulSTG.ActorControllers.FloatSelectors, asm: Assembly-CSharp}
+      data:
+        value: 12
