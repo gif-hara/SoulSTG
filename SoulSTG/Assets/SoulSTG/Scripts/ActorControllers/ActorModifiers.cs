@@ -7,7 +7,7 @@ namespace SoulSTG.ActorControllers
     [CreateAssetMenu(fileName = "ActorModifiers", menuName = "SoulSTG/ActorModifiers")]
     public class ActorModifiers : ScriptableObject
     {
-        [field: SerializeField]
+        [field: SerializeField, ClassesOnly]
         public SerializableInterface<IActorModifier>[] Modifiers { get; private set; }
     }
 }
