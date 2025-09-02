@@ -25,10 +25,11 @@ namespace SoulSTG
         [field: SerializeField]
         private WorldCameraController worldCameraControllerPrefab;
 
-        void Start()
+        void Awake()
         {
             Application.targetFrameRate = 60;
             TinyServiceLocator.Register(new GameObjectPool());
+            TinyServiceLocator.Register(masterData);
             var worldCameraController = Instantiate(worldCameraControllerPrefab);
             var player = Instantiate(playerPrefab, spawnPoint.position, spawnPoint.rotation);
             var playerInput = Instantiate(playerInputPrefab);
