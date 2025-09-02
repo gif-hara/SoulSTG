@@ -1,5 +1,4 @@
 using System;
-using System.Threading;
 using Cysharp.Threading.Tasks;
 using LitMotion;
 using LitMotion.Extensions;
@@ -22,17 +21,17 @@ namespace SoulSTG.ActorControllers.SpawnActions
         [field: SerializeField]
         private Ease ease;
 
-        public UniTask InvokeAsync(Actor owner, Actor spawnedActor, FloatContainer floatContainer, CancellationToken cancellationToken)
+        public UniTask InvokeAsync(ISpawnAction.Data data)
         {
-            var fixedAngle = floatContainer.Resolve(fixedAngleName);
-            var distance = floatContainer.Resolve(distanceName);
-            var seconds = floatContainer.Resolve(secondsName);
+            var fixedAngle = data.FloatContainer.Resolve(fixedAngleName);
+            var distance = data.FloatContainer.Resolve(distanceName);
+            var seconds = data.FloatContainer.Resolve(secondsName);
             var angle = Quaternion.Euler(0, 0, fixedAngle);
-            var to = spawnedActor.transform.position + angle * spawnedActor.transform.up * distance;
-            return LMotion.Create(spawnedActor.transform.position, to, seconds)
+            var to = data.SpawnedActor.transform.position + angle * data.SpawnedActor.transform.up * distance;
+            return LMotion.Create(data.SpawnedActor.transform.position, to, seconds)
                 .WithEase(ease)
-                .BindToPosition(spawnedActor.transform)
-                .ToUniTask(cancellationToken);
+                .BindToPosition(data.SpawnedActor.transform)
+                .ToUniTask(data.CancellationToken);
         }
     }
 }

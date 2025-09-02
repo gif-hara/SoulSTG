@@ -1,5 +1,4 @@
 using System;
-using System.Threading;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
@@ -11,9 +10,9 @@ namespace SoulSTG.ActorControllers.SpawnActions
         [field: SerializeField]
         private float seconds;
 
-        public UniTask InvokeAsync(Actor owner, Actor spawnedActor, FloatContainer floatContainer, CancellationToken cancellationToken)
+        public async UniTask InvokeAsync(ISpawnAction.Data data)
         {
-            return UniTask.Delay(TimeSpan.FromSeconds(seconds), cancellationToken: cancellationToken);
+            await UniTask.Delay(TimeSpan.FromSeconds(seconds), cancellationToken: data.CancellationToken);
         }
     }
 }

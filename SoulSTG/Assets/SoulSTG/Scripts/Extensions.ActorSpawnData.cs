@@ -2,6 +2,7 @@ using System.Threading;
 using Cysharp.Threading.Tasks;
 using SoulSTG;
 using SoulSTG.ActorControllers;
+using SoulSTG.ActorControllers.SpawnActions;
 using UnityEngine;
 
 namespace HK
@@ -18,7 +19,7 @@ namespace HK
             var scope = CancellationTokenSource.CreateLinkedTokenSource(lifeScope, cancellationToken);
             foreach (var action in self.Actions)
             {
-                await action.Value.InvokeAsync(owner, actor, floatContainer, scope.Token);
+                await action.Value.InvokeAsync(new ISpawnAction.Data(owner, actor, floatContainer, scope.Token));
             }
         }
     }

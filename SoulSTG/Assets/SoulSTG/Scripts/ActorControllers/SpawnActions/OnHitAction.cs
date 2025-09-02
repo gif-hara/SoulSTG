@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Threading;
 using Cysharp.Threading.Tasks;
 using R3;
 using R3.Triggers;
@@ -16,20 +15,20 @@ namespace SoulSTG.ActorControllers.SpawnActions
         [field: SerializeField, ClassesOnly]
         private List<SerializableInterface<IOnHitAction>> actions = new();
 
-        public UniTask InvokeAsync(Actor owner, Actor spawnedActor, FloatContainer floatContainer, CancellationToken cancellationToken)
+        public UniTask InvokeAsync(ISpawnAction.Data data)
         {
-            spawnedActor.OnTriggerEnter2DAsObservable()
+            data.SpawnedActor.OnTriggerEnter2DAsObservable()
                 .Subscribe(collision =>
                 {
                     if (collision.attachedRigidbody.TryGetComponent<Actor>(out var hitActor))
                     {
                         foreach (var action in actions)
                         {
-                            action.Value.Invoke(owner, spawnedActor, hitActor);
+                            action.Value.Invoke(data.Owner, data.SpawnedActor, hitActor);
                         }
                     }
                 })
-                .RegisterTo(cancellationToken);
+                .RegisterTo(data.CancellationToken);
             return UniTask.CompletedTask;
         }
     }

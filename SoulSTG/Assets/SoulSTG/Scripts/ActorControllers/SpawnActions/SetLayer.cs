@@ -1,5 +1,4 @@
 using System;
-using System.Threading;
 using Cysharp.Threading.Tasks;
 using HK;
 using UnityEngine;
@@ -12,9 +11,9 @@ namespace SoulSTG.ActorControllers.SpawnActions
         [field: SerializeField]
         private string layerName;
 
-        public UniTask InvokeAsync(Actor owner, Actor spawnedActor, FloatContainer floatContainer, CancellationToken cancellationToken)
+        public UniTask InvokeAsync(ISpawnAction.Data data)
         {
-            spawnedActor.gameObject.SetLayerRecursively(LayerMask.NameToLayer(layerName));
+            data.SpawnedActor.gameObject.SetLayerRecursively(LayerMask.NameToLayer(layerName));
             return UniTask.CompletedTask;
         }
     }
