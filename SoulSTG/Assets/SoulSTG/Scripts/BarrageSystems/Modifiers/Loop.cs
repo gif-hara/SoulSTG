@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks;
+using SoulSTG.ActorControllers.FloatSelectors;
 using TNRD;
 using UnityEngine;
 
@@ -7,13 +8,14 @@ namespace SoulSTG.BarrageSystems.Modifiers
     public sealed class Loop : IBarrageModifier
     {
         [field: SerializeField, ClassesOnly]
-        private int count;
+        private SerializableInterface<IFloatSelector> countSelector;
 
         [field: SerializeField, ClassesOnly]
         private SerializableInterface<IBarrageModifier>[] modifiers;
 
         public async UniTask InvokeAsync(IBarrageModifier.Data data)
         {
+            var count = countSelector.Value.GetValue(data.Owner);
             for (int i = 0; i < count; i++)
             {
                 if (data.CancellationToken.IsCancellationRequested)
