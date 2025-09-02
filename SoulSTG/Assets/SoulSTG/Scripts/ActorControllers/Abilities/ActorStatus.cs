@@ -1,3 +1,4 @@
+using HK;
 using SoulSTG.MasterDataSystem;
 using UnityEngine;
 
@@ -32,6 +33,7 @@ namespace SoulSTG.ActorControllers.Abilities
             currentHitPoint -= damage;
             if (currentHitPoint <= 0)
             {
+                actor.Event.Router.Publish(new ActorEvent.OnDie());
                 Debug.Log($"{actor.name} has died.");
             }
         }
