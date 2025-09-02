@@ -6,7 +6,7 @@ namespace SoulSTG.ActorControllers
     {
         public readonly Router Router = new();
 
-        public readonly struct OnDie
+        public readonly struct OnDie : ICommand
         {
         }
     }
