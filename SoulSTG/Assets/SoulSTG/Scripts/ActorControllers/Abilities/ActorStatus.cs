@@ -1,4 +1,5 @@
 using SoulSTG.MasterDataSystem;
+using UnityEngine;
 
 namespace SoulSTG.ActorControllers.Abilities
 {
@@ -8,14 +9,31 @@ namespace SoulSTG.ActorControllers.Abilities
 
         private readonly ActorSpec actorSpec;
 
+        private float currentHitPoint;
+
         public ActorStatus(ActorSpec actorSpec)
         {
             this.actorSpec = actorSpec;
+            currentHitPoint = actorSpec.HitPoint;
         }
 
         public void Activate(Actor actor)
         {
             this.actor = actor;
+        }
+
+        public void TakeDamage(float damage)
+        {
+            if (currentHitPoint <= 0)
+            {
+                return;
+            }
+
+            currentHitPoint -= damage;
+            if (currentHitPoint <= 0)
+            {
+                Debug.Log($"{actor.name} has died.");
+            }
         }
     }
 }
