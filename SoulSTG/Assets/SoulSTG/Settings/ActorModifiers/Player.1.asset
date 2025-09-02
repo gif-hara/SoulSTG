@@ -49,12 +49,19 @@ MonoBehaviour:
         - mode: 1
           unityReference: {fileID: 0}
           rawReference:
-            rid: 8449393960906129503
+            rid: 8449393960906129506
+        - mode: 1
+          unityReference: {fileID: 0}
+          rawReference:
+            rid: 8449393960906129507
     - rid: 6255641267460636802
       type: {class: SetLayer, ns: SoulSTG.ActorControllers.Modifiers, asm: Assembly-CSharp}
       data:
         layerName: PlayerBullet
-    - rid: 8449393960906129503
+    - rid: 8449393960906129506
       type: {class: GiveDamage, ns: SoulSTG.ActorControllers.OnHitActions, asm: Assembly-CSharp}
       data:
         power: 10
+    - rid: 8449393960906129507
+      type: {class: ReleaseToPoolBulletActor, ns: SoulSTG.ActorControllers.OnHitActions, asm: Assembly-CSharp}
+      data: 
