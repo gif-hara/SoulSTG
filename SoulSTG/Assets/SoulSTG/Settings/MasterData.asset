@@ -18,5 +18,5 @@ MonoBehaviour:
     <BarrageSpawnData>k__BackingField: {fileID: 11400000, guid: ae281bc5a13a00f45958fe15b41a0ca5, type: 2}
   <ActorSpecs>k__BackingField:
     list:
-    - <Id>k__BackingField: 10101
+    - <Id>k__BackingField: Enemy.1
       <HitPoint>k__BackingField: 100
