@@ -14,6 +14,8 @@ namespace SoulSTG.ActorControllers
 
         private readonly Dictionary<Type, IActorAbility> abilities = new();
 
+        public readonly ActorEvent Event = new();
+
         public T AddAbility<T>() where T : IActorAbility, new()
         {
             var instance = new T();
