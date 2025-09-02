@@ -14,7 +14,7 @@ namespace SoulSTG.BarrageSystems.Modifiers
         [field: SerializeField, ClassesOnly]
         private SerializableInterface<IBarrageModifier>[] modifiers;
 
-        public async UniTask InvokeAsync(Actor owner, Transform spawnPoint, CancellationToken cancellationToken)
+        public async UniTask InvokeAsync(Actor owner, Transform spawnPoint, FloatContainer floatContainer, CancellationToken cancellationToken)
         {
             for (int i = 0; i < count; i++)
             {
@@ -24,7 +24,7 @@ namespace SoulSTG.BarrageSystems.Modifiers
                 }
                 foreach (var modifier in modifiers)
                 {
-                    await modifier.Value.InvokeAsync(owner, spawnPoint, cancellationToken);
+                    await modifier.Value.InvokeAsync(owner, spawnPoint, floatContainer, cancellationToken);
                 }
             }
         }

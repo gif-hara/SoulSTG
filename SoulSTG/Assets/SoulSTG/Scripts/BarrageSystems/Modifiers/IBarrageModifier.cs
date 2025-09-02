@@ -7,6 +7,6 @@ namespace SoulSTG.BarrageSystems.Modifiers
 {
     public interface IBarrageModifier
     {
-        UniTask InvokeAsync(Actor owner, Transform spawnPoint, CancellationToken cancellationToken);
+        UniTask InvokeAsync(Actor owner, Transform spawnPoint, FloatContainer floatContainer, CancellationToken cancellationToken);
     }
 }

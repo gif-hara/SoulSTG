@@ -11,19 +11,22 @@ namespace SoulSTG.ActorControllers.SpawnActions
     public sealed class TweenFromAngle : ISpawnAction
     {
         [field: SerializeField]
-        private float distance;
+        private string distanceName = "Distance";
 
         [field: SerializeField]
-        private float fixedAngle;
+        private string fixedAngleName = "FixedAngle";
 
         [field: SerializeField]
-        private float seconds;
+        private string secondsName = "Seconds";
 
         [field: SerializeField]
         private Ease ease;
 
         public UniTask InvokeAsync(Actor owner, Actor spawnedActor, FloatContainer floatContainer, CancellationToken cancellationToken)
         {
+            var fixedAngle = floatContainer.Resolve(fixedAngleName);
+            var distance = floatContainer.Resolve(distanceName);
+            var seconds = floatContainer.Resolve(secondsName);
             var angle = Quaternion.Euler(0, 0, fixedAngle);
             var to = spawnedActor.transform.position + angle * spawnedActor.transform.up * distance;
             return LMotion.Create(spawnedActor.transform.position, to, seconds)

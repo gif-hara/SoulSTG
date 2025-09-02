@@ -11,11 +11,11 @@ namespace SoulSTG.BarrageSystems.Modifiers
         [field: SerializeField, ClassesOnly]
         private SerializableInterface<IBarrageModifier>[] modifiers;
 
-        public UniTask InvokeAsync(Actor owner, Transform spawnPoint, CancellationToken cancellationToken)
+        public UniTask InvokeAsync(Actor owner, Transform spawnPoint, FloatContainer floatContainer, CancellationToken cancellationToken)
         {
             foreach (var modifier in modifiers)
             {
-                modifier.Value.InvokeAsync(owner, spawnPoint, cancellationToken).Forget();
+                modifier.Value.InvokeAsync(owner, spawnPoint, floatContainer, cancellationToken).Forget();
             }
             return UniTask.CompletedTask;
         }

@@ -14,9 +14,9 @@ namespace SoulSTG.BarrageSystems.Modifiers
         [field: SerializeField]
         private ActorSpawnActions actorModifiers;
 
-        public UniTask InvokeAsync(Actor owner, Transform spawnPoint, CancellationToken cancellationToken)
+        public UniTask InvokeAsync(Actor owner, Transform spawnPoint, FloatContainer floatContainer, CancellationToken cancellationToken)
         {
-            return actorModifiers.SpawnAsync(owner, prefab, spawnPoint.position, spawnPoint.rotation, cancellationToken);
+            return actorModifiers.SpawnAsync(owner, prefab, spawnPoint.position, spawnPoint.rotation, floatContainer, cancellationToken);
         }
     }
 }

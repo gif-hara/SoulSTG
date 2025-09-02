@@ -21,6 +21,10 @@ MonoBehaviour:
   - mode: 1
     unityReference: {fileID: 0}
     rawReference:
+      rid: 8449393970488279143
+  - mode: 1
+    unityReference: {fileID: 0}
+    rawReference:
       rid: 6255641267460636758
   - mode: 1
     unityReference: {fileID: 0}
@@ -67,3 +71,37 @@ MonoBehaviour:
       type: {class: FromActorDocument, ns: SoulSTG.BarrageSystems.SpawnPointSelectors, asm: Assembly-CSharp}
       data:
         transformName: BulletFirePoint.1
+    - rid: 8449393970488279143
+      type: {class: RegisterOrUpdateFloatContainer, ns: SoulSTG.BarrageSystems.Modifiers, asm: Assembly-CSharp}
+      data:
+        elements:
+        - <Key>k__BackingField: Distance
+          <Selector>k__BackingField:
+            mode: 1
+            unityReference: {fileID: 0}
+            rawReference:
+              rid: 8449393970488279145
+        - <Key>k__BackingField: FixedAngle
+          <Selector>k__BackingField:
+            mode: 1
+            unityReference: {fileID: 0}
+            rawReference:
+              rid: 8449393970488279144
+        - <Key>k__BackingField: Seconds
+          <Selector>k__BackingField:
+            mode: 1
+            unityReference: {fileID: 0}
+            rawReference:
+              rid: 8449393970488279146
+    - rid: 8449393970488279144
+      type: {class: Constant, ns: SoulSTG.ActorControllers.FloatSelectors, asm: Assembly-CSharp}
+      data:
+        value: 0
+    - rid: 8449393970488279145
+      type: {class: Constant, ns: SoulSTG.ActorControllers.FloatSelectors, asm: Assembly-CSharp}
+      data:
+        value: 32
+    - rid: 8449393970488279146
+      type: {class: Constant, ns: SoulSTG.ActorControllers.FloatSelectors, asm: Assembly-CSharp}
+      data:
+        value: 0.2

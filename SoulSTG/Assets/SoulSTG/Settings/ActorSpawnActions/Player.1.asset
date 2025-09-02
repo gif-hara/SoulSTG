@@ -24,7 +24,7 @@ MonoBehaviour:
   - mode: 1
     unityReference: {fileID: 0}
     rawReference:
-      rid: 6255641199650799699
+      rid: 8449393970488279133
   - mode: 1
     unityReference: {fileID: 0}
     rawReference:
@@ -35,13 +35,6 @@ MonoBehaviour:
     - rid: 6255641175016866075
       type: {class: ReleaseToPool, ns: SoulSTG.ActorControllers.SpawnActions, asm: Assembly-CSharp}
       data: 
-    - rid: 6255641199650799699
-      type: {class: TweenFromAngle, ns: SoulSTG.ActorControllers.SpawnActions, asm: Assembly-CSharp}
-      data:
-        distance: 32
-        fixedAngle: 0
-        seconds: 0.3
-        ease: 0
     - rid: 6255641267460636798
       type: {class: OnHitAction, ns: SoulSTG.ActorControllers.SpawnActions, asm: Assembly-CSharp}
       data:
@@ -65,3 +58,10 @@ MonoBehaviour:
     - rid: 8449393960906129507
       type: {class: ReleaseToPoolBulletActor, ns: SoulSTG.ActorControllers.OnHitActions, asm: Assembly-CSharp}
       data: 
+    - rid: 8449393970488279133
+      type: {class: TweenFromAngle, ns: SoulSTG.ActorControllers.SpawnActions, asm: Assembly-CSharp}
+      data:
+        distanceName: Distance
+        fixedAngleName: FixedAngle
+        secondsName: Seconds
+        ease: 0

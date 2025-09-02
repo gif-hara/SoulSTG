@@ -13,7 +13,7 @@ namespace SoulSTG.BarrageSystems.Modifiers
         [field: SerializeField, ClassesOnly]
         private SerializableInterface<IFloatSelector> coolTimeSelector;
 
-        public UniTask InvokeAsync(Actor owner, Transform spawnPoint, CancellationToken cancellationToken)
+        public UniTask InvokeAsync(Actor owner, Transform spawnPoint, FloatContainer floatContainer, CancellationToken cancellationToken)
         {
             owner.GetAbility<ActorBulletSystem>().SetCoolTime(coolTimeSelector.Value.GetValue(owner));
             return UniTask.CompletedTask;

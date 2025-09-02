@@ -15,7 +15,7 @@ namespace SoulSTG.BarrageSystems.Modifiers
         [field: SerializeField, ClassesOnly]
         private SerializableInterface<IFloatSelector> rotationSelector;
 
-        public UniTask InvokeAsync(Actor owner, Transform spawnPoint, CancellationToken cancellationToken)
+        public UniTask InvokeAsync(Actor owner, Transform spawnPoint, FloatContainer floatContainer, CancellationToken cancellationToken)
         {
             owner.Document.Q<Transform>(transformName).rotation = Quaternion.Euler(0f, 0f, rotationSelector.Value.GetValue(owner));
             return UniTask.CompletedTask;
