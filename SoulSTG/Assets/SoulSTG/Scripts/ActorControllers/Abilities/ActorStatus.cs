@@ -34,7 +34,6 @@ namespace SoulSTG.ActorControllers.Abilities
             if (currentHitPoint <= 0)
             {
                 actor.Event.Router.Publish(new ActorEvent.OnDie());
-                Debug.Log($"{actor.name} has died.");
             }
         }
     }
