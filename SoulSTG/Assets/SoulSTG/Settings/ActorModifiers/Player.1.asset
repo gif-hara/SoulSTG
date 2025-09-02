@@ -44,8 +44,17 @@ MonoBehaviour:
         ease: 0
     - rid: 6255641267460636798
       type: {class: OnHitAction, ns: SoulSTG.ActorControllers.Modifiers, asm: Assembly-CSharp}
-      data: 
+      data:
+        actions:
+        - mode: 1
+          unityReference: {fileID: 0}
+          rawReference:
+            rid: 8449393960906129503
     - rid: 6255641267460636802
       type: {class: SetLayer, ns: SoulSTG.ActorControllers.Modifiers, asm: Assembly-CSharp}
       data:
         layerName: PlayerBullet
+    - rid: 8449393960906129503
+      type: {class: GiveDamage, ns: SoulSTG.ActorControllers.OnHitActions, asm: Assembly-CSharp}
+      data:
+        power: 10
