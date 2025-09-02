@@ -1,4 +1,5 @@
 using HK;
+using R3;
 using SoulSTG.MasterDataSystem;
 
 namespace SoulSTG.ActorControllers.Abilities
@@ -7,14 +8,13 @@ namespace SoulSTG.ActorControllers.Abilities
     {
         private Actor actor;
 
-        private readonly ActorSpec actorSpec;
+        private readonly ReactiveProperty<float> currentHitPoint;
 
-        private float currentHitPoint;
+        public ReadOnlyReactiveProperty<float> CurrentHitPoint => currentHitPoint;
 
         public ActorStatus(ActorSpec actorSpec)
         {
-            this.actorSpec = actorSpec;
-            currentHitPoint = actorSpec.HitPoint;
+            currentHitPoint = new ReactiveProperty<float>(actorSpec.HitPoint);
         }
 
         public void Activate(Actor actor)
@@ -24,13 +24,13 @@ namespace SoulSTG.ActorControllers.Abilities
 
         public void TakeDamage(float damage)
         {
-            if (currentHitPoint <= 0)
+            if (currentHitPoint.Value <= 0)
             {
                 return;
             }
 
-            currentHitPoint -= damage;
-            if (currentHitPoint <= 0)
+            currentHitPoint.Value -= damage;
+            if (currentHitPoint.Value <= 0)
             {
                 actor.Event.Router.Publish(new ActorEvent.OnDie());
             }
