@@ -22,7 +22,7 @@ namespace SoulSTG.ActorControllers.SpawnActions
         [field: SerializeField]
         private Ease ease;
 
-        public UniTask InvokeAsync(Actor owner, Actor spawnedActor, CancellationToken cancellationToken)
+        public UniTask InvokeAsync(Actor owner, Actor spawnedActor, FloatContainer floatContainer, CancellationToken cancellationToken)
         {
             var angle = Quaternion.Euler(0, 0, fixedAngle);
             var to = spawnedActor.transform.position + angle * spawnedActor.transform.up * distance;

@@ -5,6 +5,6 @@ namespace SoulSTG.ActorControllers.SpawnActions
 {
     public interface ISpawnAction
     {
-        UniTask InvokeAsync(Actor owner, Actor spawnedActor, CancellationToken cancellationToken);
+        UniTask InvokeAsync(Actor owner, Actor spawnedActor, FloatContainer floatContainer, CancellationToken cancellationToken);
     }
 }

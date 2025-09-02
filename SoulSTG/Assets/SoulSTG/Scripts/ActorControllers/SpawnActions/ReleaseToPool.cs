@@ -8,7 +8,7 @@ namespace SoulSTG.ActorControllers.SpawnActions
     [Serializable]
     public sealed class ReleaseToPool : ISpawnAction
     {
-        public UniTask InvokeAsync(Actor owner, Actor spawnedActor, CancellationToken cancellationToken)
+        public UniTask InvokeAsync(Actor owner, Actor spawnedActor, FloatContainer floatContainer, CancellationToken cancellationToken)
         {
             TinyServiceLocator.Resolve<GameObjectPool>().Release(spawnedActor);
             return UniTask.CompletedTask;

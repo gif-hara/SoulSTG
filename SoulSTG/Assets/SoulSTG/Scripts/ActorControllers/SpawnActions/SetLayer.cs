@@ -12,7 +12,7 @@ namespace SoulSTG.ActorControllers.SpawnActions
         [field: SerializeField]
         private string layerName;
 
-        public UniTask InvokeAsync(Actor owner, Actor spawnedActor, CancellationToken cancellationToken)
+        public UniTask InvokeAsync(Actor owner, Actor spawnedActor, FloatContainer floatContainer, CancellationToken cancellationToken)
         {
             spawnedActor.gameObject.SetLayerRecursively(LayerMask.NameToLayer(layerName));
             return UniTask.CompletedTask;

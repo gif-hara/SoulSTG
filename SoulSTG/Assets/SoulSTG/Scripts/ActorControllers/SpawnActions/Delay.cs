@@ -11,7 +11,7 @@ namespace SoulSTG.ActorControllers.SpawnActions
         [field: SerializeField]
         private float seconds;
 
-        public UniTask InvokeAsync(Actor owner, Actor spawnedActor, CancellationToken cancellationToken)
+        public UniTask InvokeAsync(Actor owner, Actor spawnedActor, FloatContainer floatContainer, CancellationToken cancellationToken)
         {
             return UniTask.Delay(TimeSpan.FromSeconds(seconds), cancellationToken: cancellationToken);
         }

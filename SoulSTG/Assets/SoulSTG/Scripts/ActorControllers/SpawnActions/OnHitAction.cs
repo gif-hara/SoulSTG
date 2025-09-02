@@ -16,7 +16,7 @@ namespace SoulSTG.ActorControllers.SpawnActions
         [field: SerializeField, ClassesOnly]
         private List<SerializableInterface<IOnHitAction>> actions = new();
 
-        public UniTask InvokeAsync(Actor owner, Actor spawnedActor, CancellationToken cancellationToken)
+        public UniTask InvokeAsync(Actor owner, Actor spawnedActor, FloatContainer floatContainer, CancellationToken cancellationToken)
         {
             spawnedActor.OnTriggerEnter2DAsObservable()
                 .Subscribe(collision =>
