@@ -7,6 +7,6 @@ namespace SoulSTG.MasterDataSystem
     public class ActorSpec
     {
         [field: SerializeField]
-        public float hitPoint { get; private set; }
+        public float HitPoint { get; private set; }
     }
 }
