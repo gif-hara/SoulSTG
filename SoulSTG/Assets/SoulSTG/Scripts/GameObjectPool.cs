@@ -74,6 +74,26 @@ namespace SoulSTG
             pool.Release(obj.gameObject);
         }
 
+        public bool TryRelease<T>(T obj) where T : Component
+        {
+            if (!spawnedObjectPoolMap.TryGetValue(obj.gameObject, out var pool))
+            {
+                return false;
+            }
+            pool.Release(obj.gameObject);
+            return true;
+        }
+
+        public void ReleaseOrDestroy<T>(T obj) where T : Component
+        {
+            if (!spawnedObjectPoolMap.TryGetValue(obj.gameObject, out var pool))
+            {
+                Object.Destroy(obj.gameObject);
+                return;
+            }
+            pool.Release(obj.gameObject);
+        }
+
         public CancellationToken GetLifeTimeToken(Component component)
         {
             if (!lifeTimeTokens.TryGetValue(component.gameObject, out var tokenSource))
