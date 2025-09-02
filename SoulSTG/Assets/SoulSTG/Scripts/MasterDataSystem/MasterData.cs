@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace SoulSTG.MasterDataSystem
@@ -7,5 +8,8 @@ namespace SoulSTG.MasterDataSystem
     {
         [field: SerializeField]
         public PlayerSpec PlayerSpec { get; private set; }
+
+        [field: SerializeField]
+        public ActorSpec.DictionaryList ActorSpecs { get; private set; }
     }
 }
