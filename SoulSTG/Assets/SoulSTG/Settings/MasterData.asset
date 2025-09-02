@@ -20,3 +20,5 @@ MonoBehaviour:
     list:
     - <Id>k__BackingField: Enemy.1
       <HitPoint>k__BackingField: 100
+    - <Id>k__BackingField: Player.1
+      <HitPoint>k__BackingField: 100
