@@ -253,6 +253,26 @@ PrefabInstance:
       propertyPath: actorSpecId
       value: Enemy.1
       objectReference: {fileID: 0}
+    - target: {fileID: 9172924623756097490, guid: ef721a0c95d46a44490f5cc58fb8172c, type: 3}
+      propertyPath: 'managedReferences[-2]'
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9172924623756097490, guid: ef721a0c95d46a44490f5cc58fb8172c, type: 3}
+      propertyPath: onDieActions.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9172924623756097490, guid: ef721a0c95d46a44490f5cc58fb8172c, type: 3}
+      propertyPath: onDieActions.Array.data[0].mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9172924623756097490, guid: ef721a0c95d46a44490f5cc58fb8172c, type: 3}
+      propertyPath: 'managedReferences[8449393960906129708]'
+      value: Assembly-CSharp SoulSTG.ActorControllers.OnDieActions.ReleaseOrDestroy
+      objectReference: {fileID: 0}
+    - target: {fileID: 9172924623756097490, guid: ef721a0c95d46a44490f5cc58fb8172c, type: 3}
+      propertyPath: onDieActions.Array.data[0].rawReference
+      value: 8449393960906129708
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
