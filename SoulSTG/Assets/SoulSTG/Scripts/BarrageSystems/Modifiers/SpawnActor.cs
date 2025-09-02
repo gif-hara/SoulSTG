@@ -12,7 +12,7 @@ namespace SoulSTG.BarrageSystems.Modifiers
         private Actor prefab;
 
         [field: SerializeField]
-        private ActorModifiers actorModifiers;
+        private ActorSpawnActions actorModifiers;
 
         public UniTask InvokeAsync(Actor owner, Transform spawnPoint, CancellationToken cancellationToken)
         {

@@ -4,10 +4,10 @@ using Cysharp.Threading.Tasks;
 using HK;
 using UnityEngine;
 
-namespace SoulSTG.ActorControllers.Modifiers
+namespace SoulSTG.ActorControllers.SpawnActions
 {
     [Serializable]
-    public sealed class SetLayer : IActorModifier
+    public sealed class SetLayer : ISpawnAction
     {
         [field: SerializeField]
         private string layerName;

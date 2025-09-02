@@ -3,10 +3,10 @@ using System.Threading;
 using Cysharp.Threading.Tasks;
 using HK;
 
-namespace SoulSTG.ActorControllers.Modifiers
+namespace SoulSTG.ActorControllers.SpawnActions
 {
     [Serializable]
-    public sealed class ReleaseToPool : IActorModifier
+    public sealed class ReleaseToPool : ISpawnAction
     {
         public UniTask InvokeAsync(Actor owner, Actor spawnedActor, CancellationToken cancellationToken)
         {

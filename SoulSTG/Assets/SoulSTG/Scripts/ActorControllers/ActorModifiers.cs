@@ -1,13 +1,13 @@
-using SoulSTG.ActorControllers.Modifiers;
+using SoulSTG.ActorControllers.SpawnActions;
 using TNRD;
 using UnityEngine;
 
 namespace SoulSTG.ActorControllers
 {
     [CreateAssetMenu(fileName = "ActorModifiers", menuName = "SoulSTG/ActorModifiers")]
-    public class ActorModifiers : ScriptableObject
+    public class ActorSpawnActions : ScriptableObject
     {
         [field: SerializeField, ClassesOnly]
-        public SerializableInterface<IActorModifier>[] Modifiers { get; private set; }
+        public SerializableInterface<ISpawnAction>[] Actions { get; private set; }
     }
 }

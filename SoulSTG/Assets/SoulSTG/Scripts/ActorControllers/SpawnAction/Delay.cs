@@ -3,10 +3,10 @@ using System.Threading;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-namespace SoulSTG.ActorControllers.Modifiers
+namespace SoulSTG.ActorControllers.SpawnActions
 {
     [Serializable]
-    public sealed class Delay : IActorModifier
+    public sealed class Delay : ISpawnAction
     {
         [field: SerializeField]
         private float seconds;

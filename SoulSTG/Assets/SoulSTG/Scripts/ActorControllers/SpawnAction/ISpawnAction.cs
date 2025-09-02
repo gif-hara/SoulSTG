@@ -1,9 +1,9 @@
 using System.Threading;
 using Cysharp.Threading.Tasks;
 
-namespace SoulSTG.ActorControllers.Modifiers
+namespace SoulSTG.ActorControllers.SpawnActions
 {
-    public interface IActorModifier
+    public interface ISpawnAction
     {
         UniTask InvokeAsync(Actor owner, Actor spawnedActor, CancellationToken cancellationToken);
     }

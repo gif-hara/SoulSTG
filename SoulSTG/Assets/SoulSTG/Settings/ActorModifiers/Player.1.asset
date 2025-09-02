@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f56901282fae064c948f463ca9c10de, type: 3}
   m_Name: Player.1
   m_EditorClassIdentifier: 
-  <Modifiers>k__BackingField:
+  <Actions>k__BackingField:
   - mode: 1
     unityReference: {fileID: 0}
     rawReference:
@@ -33,17 +33,17 @@ MonoBehaviour:
     version: 2
     RefIds:
     - rid: 6255641175016866075
-      type: {class: ReleaseToPool, ns: SoulSTG.ActorControllers.Modifiers, asm: Assembly-CSharp}
+      type: {class: ReleaseToPool, ns: SoulSTG.ActorControllers.SpawnActions, asm: Assembly-CSharp}
       data: 
     - rid: 6255641199650799699
-      type: {class: TweenFromAngle, ns: SoulSTG.ActorControllers.Modifiers, asm: Assembly-CSharp}
+      type: {class: TweenFromAngle, ns: SoulSTG.ActorControllers.SpawnActions, asm: Assembly-CSharp}
       data:
         distance: 32
         fixedAngle: 0
         seconds: 0.3
         ease: 0
     - rid: 6255641267460636798
-      type: {class: OnHitAction, ns: SoulSTG.ActorControllers.Modifiers, asm: Assembly-CSharp}
+      type: {class: OnHitAction, ns: SoulSTG.ActorControllers.SpawnActions, asm: Assembly-CSharp}
       data:
         actions:
         - mode: 1
@@ -55,7 +55,7 @@ MonoBehaviour:
           rawReference:
             rid: 8449393960906129507
     - rid: 6255641267460636802
-      type: {class: SetLayer, ns: SoulSTG.ActorControllers.Modifiers, asm: Assembly-CSharp}
+      type: {class: SetLayer, ns: SoulSTG.ActorControllers.SpawnActions, asm: Assembly-CSharp}
       data:
         layerName: PlayerBullet
     - rid: 8449393960906129506

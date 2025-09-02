@@ -5,10 +5,10 @@ using LitMotion;
 using LitMotion.Extensions;
 using UnityEngine;
 
-namespace SoulSTG.ActorControllers.Modifiers
+namespace SoulSTG.ActorControllers.SpawnActions
 {
     [Serializable]
-    public sealed class TweenFromAngle : IActorModifier
+    public sealed class TweenFromAngle : ISpawnAction
     {
         [field: SerializeField]
         private float distance;

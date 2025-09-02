@@ -8,10 +8,10 @@ using SoulSTG.ActorControllers.OnHitActions;
 using TNRD;
 using UnityEngine;
 
-namespace SoulSTG.ActorControllers.Modifiers
+namespace SoulSTG.ActorControllers.SpawnActions
 {
     [Serializable]
-    public sealed class OnHitAction : IActorModifier
+    public sealed class OnHitAction : ISpawnAction
     {
         [field: SerializeField, ClassesOnly]
         private List<SerializableInterface<IOnHitAction>> actions = new();
