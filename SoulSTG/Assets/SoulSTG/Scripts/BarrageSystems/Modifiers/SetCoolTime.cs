@@ -1,6 +1,4 @@
-using System.Threading;
 using Cysharp.Threading.Tasks;
-using SoulSTG.ActorControllers;
 using SoulSTG.ActorControllers.Abilities;
 using SoulSTG.ActorControllers.FloatSelectors;
 using TNRD;
@@ -13,9 +11,9 @@ namespace SoulSTG.BarrageSystems.Modifiers
         [field: SerializeField, ClassesOnly]
         private SerializableInterface<IFloatSelector> coolTimeSelector;
 
-        public UniTask InvokeAsync(Actor owner, Transform spawnPoint, FloatContainer floatContainer, CancellationToken cancellationToken)
+        public UniTask InvokeAsync(IBarrageModifier.Data data)
         {
-            owner.GetAbility<ActorBulletSystem>().SetCoolTime(coolTimeSelector.Value.GetValue(owner));
+            data.Owner.GetAbility<ActorBulletSystem>().SetCoolTime(coolTimeSelector.Value.GetValue(data.Owner));
             return UniTask.CompletedTask;
         }
     }

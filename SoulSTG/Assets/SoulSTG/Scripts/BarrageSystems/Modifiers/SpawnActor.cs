@@ -1,4 +1,3 @@
-using System.Threading;
 using Cysharp.Threading.Tasks;
 using HK;
 using SoulSTG.ActorControllers;
@@ -14,9 +13,9 @@ namespace SoulSTG.BarrageSystems.Modifiers
         [field: SerializeField]
         private ActorSpawnActions actorModifiers;
 
-        public UniTask InvokeAsync(Actor owner, Transform spawnPoint, FloatContainer floatContainer, CancellationToken cancellationToken)
+        public UniTask InvokeAsync(IBarrageModifier.Data data)
         {
-            return actorModifiers.SpawnAsync(owner, prefab, spawnPoint.position, spawnPoint.rotation, floatContainer, cancellationToken);
+            return actorModifiers.SpawnAsync(data.Owner, prefab, data.SpawnPoint.position, data.SpawnPoint.rotation, data.FloatContainer, data.CancellationToken);
         }
     }
 }

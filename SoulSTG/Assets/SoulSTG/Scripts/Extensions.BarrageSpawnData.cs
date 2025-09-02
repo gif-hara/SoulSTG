@@ -1,8 +1,8 @@
-using System.Threading;
 using Cysharp.Threading.Tasks;
 using SoulSTG;
 using SoulSTG.ActorControllers;
 using SoulSTG.BarrageSystems;
+using SoulSTG.BarrageSystems.Modifiers;
 
 namespace HK
 {
@@ -17,7 +17,7 @@ namespace HK
             var floatContainer = new FloatContainer();
             foreach (var modifier in self.Modifiers)
             {
-                await modifier.Value.InvokeAsync(owner, spawnPoint, floatContainer, owner.GetLifeTimeToken());
+                await modifier.Value.InvokeAsync(new IBarrageModifier.Data(owner, spawnPoint, floatContainer, owner.GetLifeTimeToken()));
             }
         }
     }

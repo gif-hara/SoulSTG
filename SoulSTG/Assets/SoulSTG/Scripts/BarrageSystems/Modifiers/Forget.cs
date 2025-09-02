@@ -1,6 +1,4 @@
-using System.Threading;
 using Cysharp.Threading.Tasks;
-using SoulSTG.ActorControllers;
 using TNRD;
 using UnityEngine;
 
@@ -11,11 +9,11 @@ namespace SoulSTG.BarrageSystems.Modifiers
         [field: SerializeField, ClassesOnly]
         private SerializableInterface<IBarrageModifier>[] modifiers;
 
-        public UniTask InvokeAsync(Actor owner, Transform spawnPoint, FloatContainer floatContainer, CancellationToken cancellationToken)
+        public UniTask InvokeAsync(IBarrageModifier.Data data)
         {
             foreach (var modifier in modifiers)
             {
-                modifier.Value.InvokeAsync(owner, spawnPoint, floatContainer, cancellationToken).Forget();
+                modifier.Value.InvokeAsync(data).Forget();
             }
             return UniTask.CompletedTask;
         }

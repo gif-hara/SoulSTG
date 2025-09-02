@@ -1,7 +1,5 @@
 using System;
-using System.Threading;
 using Cysharp.Threading.Tasks;
-using SoulSTG.ActorControllers;
 using SoulSTG.ActorControllers.FloatSelectors;
 using TNRD;
 using UnityEngine;
@@ -14,11 +12,11 @@ namespace SoulSTG.BarrageSystems.Modifiers
         [field: SerializeField]
         private Element[] elements;
 
-        public UniTask InvokeAsync(Actor owner, Transform spawnPoint, FloatContainer floatContainer, CancellationToken cancellationToken)
+        public UniTask InvokeAsync(IBarrageModifier.Data data)
         {
             foreach (var element in elements)
             {
-                floatContainer.RegisterOrUpdate(element.Key, element.Selector.Value.GetValue(owner));
+                data.FloatContainer.RegisterOrUpdate(element.Key, element.Selector.Value.GetValue(data.Owner));
             }
             return UniTask.CompletedTask;
         }
