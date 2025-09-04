@@ -9,7 +9,7 @@ namespace SoulSTG.ActorControllers.FloatSelectors
         [SerializeField]
         private float value;
 
-        public float GetValue(Actor actor)
+        public float GetValue(IFloatSelector.Data data)
         {
             return value;
         }

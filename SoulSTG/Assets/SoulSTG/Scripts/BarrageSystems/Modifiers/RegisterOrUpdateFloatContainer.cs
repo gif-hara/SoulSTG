@@ -16,7 +16,7 @@ namespace SoulSTG.BarrageSystems.Modifiers
         {
             foreach (var element in elements)
             {
-                data.FloatContainer.RegisterOrUpdate(element.Key, element.Selector.Value.GetValue(data.Owner));
+                data.FloatContainer.RegisterOrUpdate(element.Key, element.Selector.Value.GetValue(new IFloatSelector.Data(data.Owner, data.FloatContainer)));
             }
             return UniTask.CompletedTask;
         }

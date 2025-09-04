@@ -13,7 +13,7 @@ namespace SoulSTG.BarrageSystems.Modifiers
 
         public UniTask InvokeAsync(IBarrageModifier.Data data)
         {
-            data.Owner.GetAbility<ActorBulletSystem>().SetCoolTime(coolTimeSelector.Value.GetValue(data.Owner));
+            data.Owner.GetAbility<ActorBulletSystem>().SetCoolTime(coolTimeSelector.Value.GetValue(new IFloatSelector.Data(data.Owner, data.FloatContainer)));
             return UniTask.CompletedTask;
         }
     }

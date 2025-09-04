@@ -15,7 +15,7 @@ namespace SoulSTG.BarrageSystems.Modifiers
 
         public UniTask InvokeAsync(IBarrageModifier.Data data)
         {
-            data.Owner.Document.Q<Transform>(transformName).rotation *= Quaternion.Euler(0f, 0f, rotationSelector.Value.GetValue(data.Owner));
+            data.Owner.Document.Q<Transform>(transformName).rotation *= Quaternion.Euler(0f, 0f, rotationSelector.Value.GetValue(new IFloatSelector.Data(data.Owner, data.FloatContainer)));
             return UniTask.CompletedTask;
         }
     }

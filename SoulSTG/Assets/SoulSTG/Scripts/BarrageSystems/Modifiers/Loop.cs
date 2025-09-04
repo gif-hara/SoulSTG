@@ -15,7 +15,7 @@ namespace SoulSTG.BarrageSystems.Modifiers
 
         public async UniTask InvokeAsync(IBarrageModifier.Data data)
         {
-            var count = countSelector.Value.GetValue(data.Owner);
+            var count = countSelector.Value.GetValue(new IFloatSelector.Data(data.Owner, data.FloatContainer));
             for (int i = 0; i < count; i++)
             {
                 if (data.CancellationToken.IsCancellationRequested)
