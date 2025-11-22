@@ -65,7 +65,7 @@ namespace SoulSTG.ActorControllers.Abilities
                     @this.velocity = Vector2.zero;
                     var position = @this.actor.transform.position;
                     @this.actor.transform.position = position;
-                    @this.actor.transform.rotation = @this.TargetRotation;
+                    @this.actor.transform.rotation = Quaternion.Lerp(@this.actor.transform.rotation, @this.TargetRotation, @this.rotationSpeed * deltaTime);
                 })
                 .RegisterTo(actor.destroyCancellationToken);
         }
