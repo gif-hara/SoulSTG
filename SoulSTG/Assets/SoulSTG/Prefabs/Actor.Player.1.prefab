@@ -62,6 +62,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6076264424431906974, guid: f80c5208a6a54304e8ca58bfd5805262, type: 3}
   m_PrefabInstance: {fileID: 5155096581813651054}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1903462166692461363 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6764654882118712669, guid: f80c5208a6a54304e8ca58bfd5805262, type: 3}
+  m_PrefabInstance: {fileID: 5155096581813651054}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9663a3f959dfa6b45b1739451f8bcdbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulSTG.Runtime::SoulSTG.SceneView
 --- !u!1001 &5609698645327861690
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -72,7 +83,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -7740667966213524408, guid: 9c7a114fbff3cce41a00154c8c8b3b6e, type: 3}
       propertyPath: abilities.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -7740667966213524408, guid: 9c7a114fbff3cce41a00154c8c8b3b6e, type: 3}
       propertyPath: 'managedReferences[-2]'
@@ -91,6 +102,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7740667966213524408, guid: 9c7a114fbff3cce41a00154c8c8b3b6e, type: 3}
+      propertyPath: abilities.Array.data[3].mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7740667966213524408, guid: 9c7a114fbff3cce41a00154c8c8b3b6e, type: 3}
       propertyPath: abilities.Array.data[0].rawReference
       value: 6509232493118619741
       objectReference: {fileID: 0}
@@ -101,6 +116,10 @@ PrefabInstance:
     - target: {fileID: -7740667966213524408, guid: 9c7a114fbff3cce41a00154c8c8b3b6e, type: 3}
       propertyPath: abilities.Array.data[2].rawReference
       value: 6509232493118619744
+      objectReference: {fileID: 0}
+    - target: {fileID: -7740667966213524408, guid: 9c7a114fbff3cce41a00154c8c8b3b6e, type: 3}
+      propertyPath: abilities.Array.data[3].rawReference
+      value: 6509232493118619757
       objectReference: {fileID: 0}
     - target: {fileID: -7740667966213524408, guid: 9c7a114fbff3cce41a00154c8c8b3b6e, type: 3}
       propertyPath: 'managedReferences[6509232493118619740]'
@@ -122,6 +141,18 @@ PrefabInstance:
       propertyPath: 'managedReferences[6509232493118619744]'
       value: SoulSTG.Runtime SoulSTG.ActorControllers.Abilities.Movement
       objectReference: {fileID: 0}
+    - target: {fileID: -7740667966213524408, guid: 9c7a114fbff3cce41a00154c8c8b3b6e, type: 3}
+      propertyPath: 'managedReferences[6509232493118619756]'
+      value: SoulSTG.Runtime SoulSTG.ActorControllers.Abilities.Movement
+      objectReference: {fileID: 0}
+    - target: {fileID: -7740667966213524408, guid: 9c7a114fbff3cce41a00154c8c8b3b6e, type: 3}
+      propertyPath: 'managedReferences[6509232493118619757]'
+      value: SoulSTG.Runtime SoulSTG.ActorControllers.Abilities.SceneViewController
+      objectReference: {fileID: 0}
+    - target: {fileID: -7740667966213524408, guid: 9c7a114fbff3cce41a00154c8c8b3b6e, type: 3}
+      propertyPath: managedReferences[6509232493118619757].sceneView
+      value: 
+      objectReference: {fileID: 1903462166692461363}
     - target: {fileID: 3300501683713512241, guid: 9c7a114fbff3cce41a00154c8c8b3b6e, type: 3}
       propertyPath: m_Layer
       value: 6
