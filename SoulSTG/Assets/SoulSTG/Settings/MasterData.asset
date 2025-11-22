@@ -19,5 +19,8 @@ MonoBehaviour:
     list:
     - <Id>k__BackingField: Enemy.1
       <HitPoint>k__BackingField: 100
+      <InitialWeaponPrefabs>k__BackingField: []
     - <Id>k__BackingField: Player.1
       <HitPoint>k__BackingField: 100
+      <InitialWeaponPrefabs>k__BackingField:
+      - {fileID: 5417415326624017783, guid: 52de461550b3ad94b99ad59d74048601, type: 3}
