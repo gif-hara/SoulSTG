@@ -254,6 +254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   masterData: {fileID: 11400000, guid: 4c5bec67b264bd44f9f67a187208da10, type: 2}
+  playerActorSpecId: Player.1
   playerPrefab: {fileID: 6434016922464494578, guid: aa84eeac7e2dd864386b5e78a15baed7, type: 3}
   spawnPoint: {fileID: 1390727970}
   playerInputPrefab: {fileID: 3844246669755102860, guid: 99ffccbf96653cb44aeacef395776fec, type: 3}
