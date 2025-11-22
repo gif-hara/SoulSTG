@@ -7,7 +7,10 @@ namespace SoulSTG.ActorControllers
     [CreateAssetMenu(fileName = "ActorModifiers", menuName = "SoulSTG/ActorModifiers")]
     public class ActorSpawnActions : ScriptableObject
     {
-        [field: SerializeField, ClassesOnly]
+#if UNITY_EDITOR
+        [ClassesOnly]
+#endif
+        [field: SerializeField]
         public SerializableInterface<ISpawnAction>[] Actions { get; private set; }
     }
 }

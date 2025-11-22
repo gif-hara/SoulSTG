@@ -12,7 +12,10 @@ namespace SoulSTG.ActorControllers.SpawnActions
     [Serializable]
     public sealed class OnHitAction : ISpawnAction
     {
-        [field: SerializeField, ClassesOnly]
+#if UNITY_EDITOR
+        [ClassesOnly]
+#endif
+        [field: SerializeField]
         private List<SerializableInterface<IOnHitAction>> actions = new();
 
         public UniTask InvokeAsync(ISpawnAction.Data data)

@@ -20,7 +20,10 @@ namespace SoulSTG.ActorControllers
         [field: SerializeField]
         private string actorSpecId;
 
-        [field: SerializeField, ClassesOnly]
+#if UNITY_EDITOR
+        [ClassesOnly]
+#endif
+        [field: SerializeField]
         private List<SerializableInterface<IOnDieAction>> onDieActions;
 
         void Start()
