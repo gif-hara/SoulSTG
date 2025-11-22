@@ -8,6 +8,8 @@ namespace SoulSTG.ActorControllers.Abilities
     {
         private Actor actor;
 
+        private TimeController timeController;
+
         private Vector2 velocity;
 
         public Quaternion TargetRotation { get; private set; }
@@ -49,10 +51,11 @@ namespace SoulSTG.ActorControllers.Abilities
         public void Activate(Actor actor)
         {
             this.actor = actor;
+            timeController = actor.GetAbility<TimeController>();
             actor.UpdateAsObservable()
                 .Subscribe(this, static (_, @this) =>
                 {
-                    var deltaTime = @this.actor.GetAbility<TimeController>().Time.deltaTime;
+                    var deltaTime = @this.timeController.Time.deltaTime;
                     if (@this.velocity == Vector2.zero || !@this.CanMove.Value)
                     {
                         @this.isMoving.Value = false;
