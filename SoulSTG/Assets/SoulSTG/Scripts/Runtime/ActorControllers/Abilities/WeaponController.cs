@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using SoulSTG.WeaponControllers;
+using UnityEngine;
 
 namespace SoulSTG.ActorControllers.Abilities
 {
@@ -8,9 +10,25 @@ namespace SoulSTG.ActorControllers.Abilities
 
         private readonly HashSet<string> blockedTags = new();
 
+        private List<Weapon> weapons = new();
+
         public void Activate(Actor actor)
         {
             this.actor = actor;
+        }
+
+        public void AddWeapon(Weapon weaponPrefab)
+        {
+            var weapon = Object.Instantiate(weaponPrefab, actor.transform);
+            weapons.Add(weapon);
+            weapon.Activate(actor);
+        }
+
+        public void InsertWeaponAt(Weapon weaponPrefab, int index)
+        {
+            var weapon = Object.Instantiate(weaponPrefab, actor.transform);
+            weapons.Insert(index, weapon);
+            weapon.Activate(actor);
         }
 
         public bool TryAttack()
