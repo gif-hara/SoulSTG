@@ -1,8 +1,7 @@
 using System;
 using System.Collections.Generic;
-using R3;
 
-namespace HK
+namespace R3.Notifications
 {
     public interface IMessagePublisher
     {
