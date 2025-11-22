@@ -153,6 +153,10 @@ PrefabInstance:
       propertyPath: managedReferences[6509232493118619757].sceneView
       value: 
       objectReference: {fileID: 1903462166692461363}
+    - target: {fileID: -7740667966213524408, guid: 9c7a114fbff3cce41a00154c8c8b3b6e, type: 3}
+      propertyPath: managedReferences[6509232493118619757].<SceneView>k__BackingField
+      value: 
+      objectReference: {fileID: 1903462166692461363}
     - target: {fileID: 3300501683713512241, guid: 9c7a114fbff3cce41a00154c8c8b3b6e, type: 3}
       propertyPath: m_Layer
       value: 6
