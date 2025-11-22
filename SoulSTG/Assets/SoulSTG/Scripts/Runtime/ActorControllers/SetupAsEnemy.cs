@@ -28,7 +28,7 @@ namespace SoulSTG.ActorControllers
 
         void Start()
         {
-            actor.AddAbility(new ActorStatus(TinyServiceLocator.Resolve<MasterData>().ActorSpecs.Get(actorSpecId)));
+            actor.AddAbility(new Status(TinyServiceLocator.Resolve<MasterData>().ActorSpecs.Get(actorSpecId)));
             actor.Event.Router.AsObservable<ActorEvent.OnDie>()
                 .Subscribe((this, actor), static (evt, t) =>
                 {

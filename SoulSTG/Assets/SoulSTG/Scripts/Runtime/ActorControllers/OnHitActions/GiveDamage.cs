@@ -9,7 +9,7 @@ namespace SoulSTG.ActorControllers.OnHitActions
 
         public void Invoke(Actor owner, Actor bulletActor, Actor hitActor)
         {
-            hitActor.GetAbility<Abilities.ActorStatus>().TakeDamage(power);
+            hitActor.GetAbility<Abilities.Status>().TakeDamage(power);
         }
     }
 }

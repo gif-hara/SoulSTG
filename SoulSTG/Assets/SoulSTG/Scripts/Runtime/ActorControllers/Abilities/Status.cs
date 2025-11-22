@@ -4,7 +4,7 @@ using SoulSTG.MasterDataSystem;
 
 namespace SoulSTG.ActorControllers.Abilities
 {
-    public sealed class ActorStatus : IActorAbility
+    public sealed class Status : IActorAbility
     {
         private Actor actor;
 
@@ -12,7 +12,7 @@ namespace SoulSTG.ActorControllers.Abilities
 
         public ReadOnlyReactiveProperty<float> CurrentHitPoint => currentHitPoint;
 
-        public ActorStatus(ActorSpec actorSpec)
+        public Status(ActorSpec actorSpec)
         {
             currentHitPoint = new ReactiveProperty<float>(actorSpec.HitPoint);
         }
