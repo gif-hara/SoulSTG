@@ -880,6 +880,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 22100000, guid: e134fb7eaab19d24b92afc5349e92d83, type: 2}
+    - target: {fileID: 3196671121739322165, guid: 23f853cff5939504086a598db0dc474f, type: 3}
+      propertyPath: <LocatorHolder>k__BackingField
+      value: 
+      objectReference: {fileID: 4320335814459339692}
     - target: {fileID: 5190057508445113698, guid: 23f853cff5939504086a598db0dc474f, type: 3}
       propertyPath: m_Name
       value: SceneView.Player.1
@@ -917,3 +921,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6178859332667606788, guid: 23f853cff5939504086a598db0dc474f, type: 3}
   m_PrefabInstance: {fileID: 8195489969356779112}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4320335814459339692 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5352757117087817156, guid: 23f853cff5939504086a598db0dc474f, type: 3}
+  m_PrefabInstance: {fileID: 8195489969356779112}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d4641b9716b4dd4681d4066b3823591, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulSTG.Runtime::SoulSTG.LocatorHolder
