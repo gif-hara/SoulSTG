@@ -1,6 +1,6 @@
-using System;
 using System.Collections.Generic;
 using SoulSTG.ActorControllers.Abilities;
+using TNRD;
 using UnityEngine;
 using UnityEngine.Assertions;
 
@@ -8,39 +8,47 @@ namespace SoulSTG.ActorControllers
 {
     public class Actor : MonoBehaviour
     {
-        private readonly Dictionary<Type, IActorAbility> abilities = new();
+#if UNITY_EDITOR
+        [ClassesOnly]
+#endif
+        [SerializeField]
+        private List<SerializableInterface<IActorAbility>> abilities = new();
 
         public readonly ActorEvent Event = new();
 
-        public T AddAbility<T>() where T : IActorAbility, new()
+        void Awake()
         {
-            var instance = new T();
-            abilities[typeof(T)] = instance;
-            instance.Activate(this);
-            return instance;
-        }
-
-        public T AddAbility<T>(T ability) where T : IActorAbility
-        {
-            abilities[typeof(T)] = ability;
-            ability.Activate(this);
-            return ability;
+            foreach (var ability in abilities)
+            {
+                ability.Value.Activate(this);
+            }
         }
 
         public T GetAbility<T>() where T : class, IActorAbility
         {
-            abilities.TryGetValue(typeof(T), out var ability);
-            Assert.IsNotNull(ability, $"Ability of type {typeof(T)} not found on actor {name}.");
-            return ability as T;
+            foreach (var ability in abilities)
+            {
+                if (ability.Value is T typedAbility)
+                {
+                    return typedAbility;
+                }
+            }
+
+            Assert.IsTrue(false, $"Ability of type {typeof(T)} not found on Actor {name}.");
+            return null;
         }
 
         public bool TryGetAbility<T>(out T ability) where T : class, IActorAbility
         {
-            if (abilities.TryGetValue(typeof(T), out var foundAbility))
+            foreach (var a in abilities)
             {
-                ability = foundAbility as T;
-                return ability != null;
+                if (a.Value is T typedAbility)
+                {
+                    ability = typedAbility;
+                    return true;
+                }
             }
+
             ability = null;
             return false;
         }

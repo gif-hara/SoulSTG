@@ -70,6 +70,58 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7740667966213524408, guid: 9c7a114fbff3cce41a00154c8c8b3b6e, type: 3}
+      propertyPath: abilities.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -7740667966213524408, guid: 9c7a114fbff3cce41a00154c8c8b3b6e, type: 3}
+      propertyPath: 'managedReferences[-2]'
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -7740667966213524408, guid: 9c7a114fbff3cce41a00154c8c8b3b6e, type: 3}
+      propertyPath: abilities.Array.data[0].mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7740667966213524408, guid: 9c7a114fbff3cce41a00154c8c8b3b6e, type: 3}
+      propertyPath: abilities.Array.data[1].mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7740667966213524408, guid: 9c7a114fbff3cce41a00154c8c8b3b6e, type: 3}
+      propertyPath: abilities.Array.data[2].mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7740667966213524408, guid: 9c7a114fbff3cce41a00154c8c8b3b6e, type: 3}
+      propertyPath: abilities.Array.data[0].rawReference
+      value: 6509232493118619741
+      objectReference: {fileID: 0}
+    - target: {fileID: -7740667966213524408, guid: 9c7a114fbff3cce41a00154c8c8b3b6e, type: 3}
+      propertyPath: abilities.Array.data[1].rawReference
+      value: 6509232493118619742
+      objectReference: {fileID: 0}
+    - target: {fileID: -7740667966213524408, guid: 9c7a114fbff3cce41a00154c8c8b3b6e, type: 3}
+      propertyPath: abilities.Array.data[2].rawReference
+      value: 6509232493118619744
+      objectReference: {fileID: 0}
+    - target: {fileID: -7740667966213524408, guid: 9c7a114fbff3cce41a00154c8c8b3b6e, type: 3}
+      propertyPath: 'managedReferences[6509232493118619740]'
+      value: SoulSTG.Runtime SoulSTG.ActorControllers.Abilities.Brain
+      objectReference: {fileID: 0}
+    - target: {fileID: -7740667966213524408, guid: 9c7a114fbff3cce41a00154c8c8b3b6e, type: 3}
+      propertyPath: 'managedReferences[6509232493118619741]'
+      value: SoulSTG.Runtime SoulSTG.ActorControllers.Abilities.Brain
+      objectReference: {fileID: 0}
+    - target: {fileID: -7740667966213524408, guid: 9c7a114fbff3cce41a00154c8c8b3b6e, type: 3}
+      propertyPath: 'managedReferences[6509232493118619742]'
+      value: SoulSTG.Runtime SoulSTG.ActorControllers.Abilities.TimeController
+      objectReference: {fileID: 0}
+    - target: {fileID: -7740667966213524408, guid: 9c7a114fbff3cce41a00154c8c8b3b6e, type: 3}
+      propertyPath: 'managedReferences[6509232493118619743]'
+      value: SoulSTG.Runtime SoulSTG.ActorControllers.Abilities.TimeController
+      objectReference: {fileID: 0}
+    - target: {fileID: -7740667966213524408, guid: 9c7a114fbff3cce41a00154c8c8b3b6e, type: 3}
+      propertyPath: 'managedReferences[6509232493118619744]'
+      value: SoulSTG.Runtime SoulSTG.ActorControllers.Abilities.Movement
+      objectReference: {fileID: 0}
     - target: {fileID: 3300501683713512241, guid: 9c7a114fbff3cce41a00154c8c8b3b6e, type: 3}
       propertyPath: m_Layer
       value: 6

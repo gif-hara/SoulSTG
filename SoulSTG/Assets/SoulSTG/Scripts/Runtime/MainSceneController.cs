@@ -36,7 +36,7 @@ namespace SoulSTG
             var worldCameraController = Instantiate(worldCameraControllerPrefab);
             var player = Instantiate(playerPrefab, spawnPoint.position, spawnPoint.rotation);
             var playerInput = Instantiate(playerInputPrefab);
-            var brainController = player.AddAbility<Brain>();
+            var brainController = player.GetAbility<Brain>();
             brainController.Attach(new Player(playerInput, worldCameraController.WorldCamera, masterData.PlayerSpec));
             worldCameraController.SetDefaultCameraTarget(player.transform);
         }

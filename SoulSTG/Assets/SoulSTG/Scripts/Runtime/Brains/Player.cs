@@ -30,8 +30,7 @@ namespace SoulSTG.ActorControllers.Brains
 
         public void Attach(Actor actor, CancellationToken cancellationToken)
         {
-            actor.AddAbility<Abilities.TimeController>();
-            actorMovement = actor.AddAbility<Movement>();
+            actorMovement = actor.GetAbility<Movement>();
 
             actorMovement.SetRotationSpeed(playerSpec.RotateSpeed);
             actor.UpdateAsObservable()
