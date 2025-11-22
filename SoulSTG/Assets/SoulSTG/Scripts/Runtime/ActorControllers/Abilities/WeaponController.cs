@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace SoulSTG.ActorControllers.Abilities
 {
-    public sealed class ActorWeaponController : IActorAbility
+    public sealed class WeaponController : IActorAbility
     {
         private Actor actor;
 
