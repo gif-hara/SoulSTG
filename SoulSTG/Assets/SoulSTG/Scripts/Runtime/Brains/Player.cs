@@ -17,7 +17,7 @@ namespace SoulSTG.ActorControllers.Brains
 
         private readonly PlayerSpec playerSpec;
 
-        private ActorMovement actorMovement;
+        private Movement actorMovement;
 
         private bool isFiring;
 
@@ -31,7 +31,7 @@ namespace SoulSTG.ActorControllers.Brains
         public void Attach(Actor actor, CancellationToken cancellationToken)
         {
             actor.AddAbility<ActorTime>();
-            actorMovement = actor.AddAbility<ActorMovement>();
+            actorMovement = actor.AddAbility<Movement>();
 
             actorMovement.SetRotationSpeed(playerSpec.RotateSpeed);
             actor.UpdateAsObservable()

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace SoulSTG.ActorControllers.Abilities
 {
-    public sealed class ActorBrain : IActorAbility
+    public sealed class Brain : IActorAbility
     {
         private Actor actor;
 

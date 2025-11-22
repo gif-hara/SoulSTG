@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace SoulSTG.ActorControllers.Abilities
 {
-    public class ActorMovement : IActorAbility
+    public class Movement : IActorAbility
     {
         private Actor actor;
 
