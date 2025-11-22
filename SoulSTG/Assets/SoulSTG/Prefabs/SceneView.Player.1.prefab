@@ -884,6 +884,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneView.Player.1
       objectReference: {fileID: 0}
+    - target: {fileID: 5352757117087817156, guid: 23f853cff5939504086a598db0dc474f, type: 3}
+      propertyPath: elements.list.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352757117087817156, guid: 23f853cff5939504086a598db0dc474f, type: 3}
+      propertyPath: elements.list.Array.data[0].transform
+      value: 
+      objectReference: {fileID: 1384841500677799513}
+    - target: {fileID: 5352757117087817156, guid: 23f853cff5939504086a598db0dc474f, type: 3}
+      propertyPath: elements.list.Array.data[1].transform
+      value: 
+      objectReference: {fileID: 3572495994230432991}
+    - target: {fileID: 5352757117087817156, guid: 23f853cff5939504086a598db0dc474f, type: 3}
+      propertyPath: elements.list.Array.data[0].overrideName
+      value: Hand.Left
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352757117087817156, guid: 23f853cff5939504086a598db0dc474f, type: 3}
+      propertyPath: elements.list.Array.data[1].overrideName
+      value: Hand.Right
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
