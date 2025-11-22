@@ -40,6 +40,11 @@ namespace SoulSTG.ActorControllers.Brains
                     var (@this, actor) = t;
                     var moveInput = @this.playerInput.actions["Move"].ReadValue<Vector2>();
                     @this.actorMovement.Move(moveInput * @this.playerSpec.MoveSpeed);
+                    if (moveInput != Vector2.zero)
+                    {
+                        var direction = Quaternion.LookRotation(Vector3.forward, moveInput);
+                        @this.actorMovement.Rotate(direction);
+                    }
                 })
                 .RegisterTo(cancellationToken);
         }
