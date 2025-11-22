@@ -14,6 +14,9 @@ namespace SoulSTG
         [field: SerializeField]
         private MasterData masterData;
 
+        [SerializeField]
+        private string playerActorSpecId;
+
         [field: SerializeField]
         private Actor playerPrefab;
 
@@ -34,7 +37,7 @@ namespace SoulSTG
             TinyServiceLocator.Register(masterData)
                 .RegisterTo(destroyCancellationToken);
             var worldCameraController = Instantiate(worldCameraControllerPrefab);
-            var player = Instantiate(playerPrefab, spawnPoint.position, spawnPoint.rotation);
+            var player = playerPrefab.Spawn(masterData.ActorSpecs.Get(playerActorSpecId), spawnPoint.position, spawnPoint.rotation);
             var playerInput = Instantiate(playerInputPrefab);
             var brainController = player.GetAbility<Brain>();
             brainController.Attach(new Player(playerInput, worldCameraController.WorldCamera, masterData.PlayerSpec));
