@@ -1,6 +1,8 @@
 using System;
 using UnityEngine;
 using HK;
+using System.Collections.Generic;
+using SoulSTG.WeaponControllers;
 
 namespace SoulSTG.MasterDataSystem
 {
@@ -12,6 +14,9 @@ namespace SoulSTG.MasterDataSystem
 
         [field: SerializeField]
         public float HitPoint { get; private set; }
+
+        [field: SerializeField]
+        public List<Weapon> InitialWeaponPrefabs { get; private set; }
 
         [Serializable]
         public class DictionaryList : DictionaryList<string, ActorSpec>
