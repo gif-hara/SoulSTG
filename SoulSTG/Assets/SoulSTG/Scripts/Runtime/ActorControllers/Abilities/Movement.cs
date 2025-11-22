@@ -52,7 +52,7 @@ namespace SoulSTG.ActorControllers.Abilities
             actor.UpdateAsObservable()
                 .Subscribe(this, static (_, @this) =>
                 {
-                    var deltaTime = @this.actor.GetAbility<ActorTime>().Time.deltaTime;
+                    var deltaTime = @this.actor.GetAbility<TimeController>().Time.deltaTime;
                     if (@this.velocity == Vector2.zero || !@this.CanMove.Value)
                     {
                         @this.isMoving.Value = false;
