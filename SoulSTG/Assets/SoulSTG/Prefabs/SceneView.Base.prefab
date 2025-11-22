@@ -41,6 +41,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2733404565806440182}
   - component: {fileID: 2834223431864106089}
+  - component: {fileID: 3196671121739322165}
+  - component: {fileID: 5352757117087817156}
   m_Layer: 0
   m_Name: SceneView.Base
   m_TagString: Untagged
@@ -86,3 +88,30 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3196671121739322165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5190057508445113698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9663a3f959dfa6b45b1739451f8bcdbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulSTG.Runtime::SoulSTG.SceneView
+  <LocatorHolder>k__BackingField: {fileID: 0}
+--- !u!114 &5352757117087817156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5190057508445113698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d4641b9716b4dd4681d4066b3823591, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulSTG.Runtime::SoulSTG.LocatorHolder
+  elements:
+    list: []
