@@ -1,4 +1,5 @@
 using HK;
+using R3;
 using SoulSTG.ActorControllers;
 using SoulSTG.ActorControllers.Abilities;
 using SoulSTG.ActorControllers.Brains;
@@ -28,8 +29,10 @@ namespace SoulSTG
         void Awake()
         {
             Application.targetFrameRate = 60;
-            TinyServiceLocator.Register(new GameObjectPool());
-            TinyServiceLocator.Register(masterData);
+            TinyServiceLocator.Register(new GameObjectPool())
+                .RegisterTo(destroyCancellationToken);
+            TinyServiceLocator.Register(masterData)
+                .RegisterTo(destroyCancellationToken);
             var worldCameraController = Instantiate(worldCameraControllerPrefab);
             var player = Instantiate(playerPrefab, spawnPoint.position, spawnPoint.rotation);
             var playerInput = Instantiate(playerInputPrefab);
