@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using SoulSTG.ActorControllers.Abilities;
+using SoulSTG.MasterDataSystem;
 using TNRD;
 using UnityEngine;
 using UnityEngine.Assertions;
@@ -51,6 +52,17 @@ namespace SoulSTG.ActorControllers
 
             ability = null;
             return false;
+        }
+
+        public Actor Spawn(ActorSpec spec, Vector3 position, Quaternion rotation)
+        {
+            var instance = Instantiate(this, position, rotation);
+            var weaponController = instance.GetAbility<WeaponController>();
+            foreach (var weaponPrefab in spec.InitialWeaponPrefabs)
+            {
+                weaponController.AddWeapon(weaponPrefab);
+            }
+            return instance;
         }
     }
 }
