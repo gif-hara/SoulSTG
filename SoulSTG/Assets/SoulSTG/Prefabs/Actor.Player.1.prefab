@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &1325221623581617784
+--- !u!1001 &5155096581813651054
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4159904914722644746, guid: f80c5208a6a54304e8ca58bfd5805262, type: 3}
       propertyPath: m_Name
-      value: SceneView.Human.1
+      value: SceneView.Player.1
       objectReference: {fileID: 0}
     - target: {fileID: 6076264424431906974, guid: f80c5208a6a54304e8ca58bfd5805262, type: 3}
       propertyPath: m_LocalPosition.x
@@ -30,15 +30,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6076264424431906974, guid: f80c5208a6a54304e8ca58bfd5805262, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6076264424431906974, guid: f80c5208a6a54304e8ca58bfd5805262, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6076264424431906974, guid: f80c5208a6a54304e8ca58bfd5805262, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6076264424431906974, guid: f80c5208a6a54304e8ca58bfd5805262, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -57,10 +57,10 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f80c5208a6a54304e8ca58bfd5805262, type: 3}
---- !u!4 &5059539401368198886 stripped
+--- !u!4 &1430367096785483504 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6076264424431906974, guid: f80c5208a6a54304e8ca58bfd5805262, type: 3}
-  m_PrefabInstance: {fileID: 1325221623581617784}
+  m_PrefabInstance: {fileID: 5155096581813651054}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5609698645327861690
 PrefabInstance:
@@ -143,7 +143,7 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 2584884650484280848, guid: 9c7a114fbff3cce41a00154c8c8b3b6e, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5059539401368198886}
+      addedObject: {fileID: 1430367096785483504}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c7a114fbff3cce41a00154c8c8b3b6e, type: 3}
 --- !u!4 &7928303292729817514 stripped
