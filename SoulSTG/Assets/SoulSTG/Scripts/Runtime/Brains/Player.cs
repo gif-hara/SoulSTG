@@ -51,14 +51,6 @@ namespace SoulSTG.ActorControllers.Brains
                     actor.GetAbility<WeaponController>().TryAttack();
                 })
                 .RegisterTo(cancellationToken);
-            playerInput.actions["Interact"].OnPerformedAsObservable()
-                .Subscribe((this, actor), static (_, t) =>
-                {
-                    Debug.Log("Interact pressed");
-                    var (@this, actor) = t;
-                    actor.GetAbility<SceneViewController>().SceneView.Animator.SetTrigger("Damage");
-                })
-                .RegisterTo(cancellationToken);
         }
     }
 }
