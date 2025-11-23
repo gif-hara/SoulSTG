@@ -23,11 +23,11 @@ namespace R3.Notifications
 
         private bool isDisposed = false;
 
-        private readonly Dictionary<Type, object> notifiers = new();
+        private readonly Dictionary<Type, (object notifier, object subject)> notifiers = new();
 
         public void Publish<T>(T message)
         {
-            object notifier;
+            (object notifier, object subject) notifier;
             lock (notifiers)
             {
                 if (isDisposed)
@@ -40,12 +40,12 @@ namespace R3.Notifications
                     return;
                 }
             }
-            ((ISubject<T>)notifier).OnNext(message);
+            ((ISubject<T>)notifier.subject).OnNext(message);
         }
 
         public Observable<T> Receive<T>()
         {
-            object notifier;
+            (object notifier, object subject) notifier;
             lock (notifiers)
             {
                 if (isDisposed)
@@ -55,12 +55,13 @@ namespace R3.Notifications
 
                 if (!notifiers.TryGetValue(typeof(T), out notifier))
                 {
-                    Observable<T> n = new Subject<T>().Synchronize();
-                    notifier = n;
+                    var s = new Subject<T>();
+                    var n = s.Synchronize();
+                    notifier = (n, s);
                     notifiers.Add(typeof(T), notifier);
                 }
             }
-            return (Observable<T>)notifier;
+            return (Observable<T>)notifier.notifier;
         }
 
         public void Dispose()
