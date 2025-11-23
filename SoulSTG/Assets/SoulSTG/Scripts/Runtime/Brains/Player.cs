@@ -19,8 +19,6 @@ namespace SoulSTG.ActorControllers.Brains
 
         private Movement actorMovement;
 
-        private bool isFiring;
-
         public Player(PlayerInput playerInput, Camera camera, PlayerSpec playerSpec)
         {
             this.playerInput = playerInput;
@@ -44,6 +42,13 @@ namespace SoulSTG.ActorControllers.Brains
                         var direction = Quaternion.LookRotation(Vector3.forward, moveInput);
                         @this.actorMovement.Rotate(direction);
                     }
+                })
+                .RegisterTo(cancellationToken);
+            playerInput.actions["Fire"].OnPerformedAsObservable()
+                .Subscribe((this, actor), static (_, t) =>
+                {
+                    var (@this, actor) = t;
+                    actor.GetAbility<WeaponController>().TryAttack();
                 })
                 .RegisterTo(cancellationToken);
         }
