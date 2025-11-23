@@ -14,11 +14,21 @@ namespace SoulSTG.ActorControllers.Abilities
         {
         }
 
-        public readonly struct Attack
+        public readonly struct BeginAttack
         {
             public readonly string AttackId;
 
-            public Attack(string attackId)
+            public BeginAttack(string attackId)
+            {
+                AttackId = attackId;
+            }
+        }
+
+        public readonly struct EndAttack
+        {
+            public readonly string AttackId;
+
+            public EndAttack(string attackId)
             {
                 AttackId = attackId;
             }
