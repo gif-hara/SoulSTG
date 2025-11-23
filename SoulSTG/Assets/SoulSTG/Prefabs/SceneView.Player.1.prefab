@@ -881,6 +881,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 22100000, guid: e134fb7eaab19d24b92afc5349e92d83, type: 2}
     - target: {fileID: 3196671121739322165, guid: 23f853cff5939504086a598db0dc474f, type: 3}
+      propertyPath: <Animator>k__BackingField
+      value: 
+      objectReference: {fileID: 6262560419849736705}
+    - target: {fileID: 3196671121739322165, guid: 23f853cff5939504086a598db0dc474f, type: 3}
       propertyPath: <LocatorHolder>k__BackingField
       value: 
       objectReference: {fileID: 4320335814459339692}
@@ -932,3 +936,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d4641b9716b4dd4681d4066b3823591, type: 3}
   m_Name: 
   m_EditorClassIdentifier: SoulSTG.Runtime::SoulSTG.LocatorHolder
+--- !u!95 &6262560419849736705 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2834223431864106089, guid: 23f853cff5939504086a598db0dc474f, type: 3}
+  m_PrefabInstance: {fileID: 8195489969356779112}
+  m_PrefabAsset: {fileID: 0}
