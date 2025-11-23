@@ -21,13 +21,7 @@ namespace SoulSTG.ActorControllers.Abilities
 
         public float MoveSpeedRate { get; set; } = 1.0f;
 
-        public readonly ReactiveProperty<bool> CanMove = new(true);
-
-        public readonly ReactiveProperty<bool> CanMoveFromEvent = new(true);
-
-        public readonly ReactiveProperty<bool> CanRotate = new(true);
-
-        public readonly ReactiveProperty<bool> CanRotateFromEvent = new(true);
+        public float RotateSpeedRate { get; set; } = 1.0f;
 
         public void Move(Vector2 velocity)
         {
@@ -58,7 +52,7 @@ namespace SoulSTG.ActorControllers.Abilities
                 .Subscribe(this, static (_, @this) =>
                 {
                     var deltaTime = @this.timeController.Time.deltaTime;
-                    if (@this.velocity == Vector2.zero || !@this.CanMove.Value)
+                    if (@this.velocity == Vector2.zero)
                     {
                         @this.isMoving.Value = false;
                     }
@@ -68,7 +62,7 @@ namespace SoulSTG.ActorControllers.Abilities
                         @this.isMoving.Value = true;
                     }
                     @this.velocity = Vector2.zero;
-                    @this.actor.transform.rotation = Quaternion.Lerp(@this.actor.transform.rotation, @this.TargetRotation, @this.rotationSpeed * deltaTime);
+                    @this.actor.transform.rotation = Quaternion.Lerp(@this.actor.transform.rotation, @this.TargetRotation, @this.rotationSpeed * deltaTime * @this.RotateSpeedRate);
                 })
                 .RegisterTo(actor.destroyCancellationToken);
         }

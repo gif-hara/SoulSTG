@@ -13,16 +13,6 @@ namespace SoulSTG.ActorControllers
             this.actor = actor;
         }
 
-        public void SetCanMove(int value)
-        {
-            actor.GetAbility<Movement>().CanMove.Value = value == 1;
-        }
-
-        public void SetCanRotate(int value)
-        {
-            actor.GetAbility<Movement>().CanRotate.Value = value == 1;
-        }
-
         public void SetRotateImmediateTargetRotation()
         {
             actor.GetAbility<Movement>().RotateImmediate(actor.GetAbility<Movement>().TargetRotation);
