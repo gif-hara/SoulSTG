@@ -53,9 +53,14 @@ namespace SoulSTG.ActorControllers
                 .RegisterTo(actor.destroyCancellationToken);
         }
 
-        public void PublishAttackEvent(string attackId)
+        public void PublishBeginAttackEvent(string attackId)
         {
-            actor.GetAbility<Abilities.Event>().Broker.Publish(new Abilities.Event.Attack(attackId));
+            actor.GetAbility<Abilities.Event>().Broker.Publish(new Abilities.Event.BeginAttack(attackId));
+        }
+
+        public void PublishEndAttackEvent(string attackId)
+        {
+            actor.GetAbility<Abilities.Event>().Broker.Publish(new Abilities.Event.EndAttack(attackId));
         }
     }
 }
