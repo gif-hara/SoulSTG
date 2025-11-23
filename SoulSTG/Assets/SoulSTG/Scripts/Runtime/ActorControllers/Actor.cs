@@ -17,8 +17,6 @@ namespace SoulSTG.ActorControllers
 
         private Dictionary<System.Type, IActorAbility> cachedAbilities = new();
 
-        public readonly ActorEvent Event = new();
-
         void Awake()
         {
             foreach (var ability in abilities)

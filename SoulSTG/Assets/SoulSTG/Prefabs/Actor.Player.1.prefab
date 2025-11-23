@@ -83,7 +83,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -7740667966213524408, guid: 9c7a114fbff3cce41a00154c8c8b3b6e, type: 3}
       propertyPath: abilities.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -7740667966213524408, guid: 9c7a114fbff3cce41a00154c8c8b3b6e, type: 3}
       propertyPath: 'managedReferences[-2]'
@@ -110,6 +110,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7740667966213524408, guid: 9c7a114fbff3cce41a00154c8c8b3b6e, type: 3}
+      propertyPath: abilities.Array.data[5].mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7740667966213524408, guid: 9c7a114fbff3cce41a00154c8c8b3b6e, type: 3}
       propertyPath: abilities.Array.data[0].rawReference
       value: 6509232493118619741
       objectReference: {fileID: 0}
@@ -128,6 +132,10 @@ PrefabInstance:
     - target: {fileID: -7740667966213524408, guid: 9c7a114fbff3cce41a00154c8c8b3b6e, type: 3}
       propertyPath: abilities.Array.data[4].rawReference
       value: 6509232493118619763
+      objectReference: {fileID: 0}
+    - target: {fileID: -7740667966213524408, guid: 9c7a114fbff3cce41a00154c8c8b3b6e, type: 3}
+      propertyPath: abilities.Array.data[5].rawReference
+      value: 6509232519097090150
       objectReference: {fileID: 0}
     - target: {fileID: -7740667966213524408, guid: 9c7a114fbff3cce41a00154c8c8b3b6e, type: 3}
       propertyPath: 'managedReferences[6509232493118619740]'
@@ -164,6 +172,14 @@ PrefabInstance:
     - target: {fileID: -7740667966213524408, guid: 9c7a114fbff3cce41a00154c8c8b3b6e, type: 3}
       propertyPath: 'managedReferences[6509232493118619763]'
       value: SoulSTG.Runtime SoulSTG.ActorControllers.Abilities.WeaponController
+      objectReference: {fileID: 0}
+    - target: {fileID: -7740667966213524408, guid: 9c7a114fbff3cce41a00154c8c8b3b6e, type: 3}
+      propertyPath: 'managedReferences[6509232519097090149]'
+      value: SoulSTG.Runtime SoulSTG.ActorControllers.Abilities.WeaponController
+      objectReference: {fileID: 0}
+    - target: {fileID: -7740667966213524408, guid: 9c7a114fbff3cce41a00154c8c8b3b6e, type: 3}
+      propertyPath: 'managedReferences[6509232519097090150]'
+      value: SoulSTG.Runtime SoulSTG.ActorControllers.Abilities.Event
       objectReference: {fileID: 0}
     - target: {fileID: -7740667966213524408, guid: 9c7a114fbff3cce41a00154c8c8b3b6e, type: 3}
       propertyPath: managedReferences[6509232493118619757].sceneView
