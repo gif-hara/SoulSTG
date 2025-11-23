@@ -85,6 +85,10 @@ PrefabInstance:
       value: Hand.Right
       objectReference: {fileID: 0}
     - target: {fileID: 6086454358626914907, guid: 3e57f2dce30b84449bb1aca8049135c3, type: 3}
+      propertyPath: managedReferences[6509232517908004950].immediateUpdate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6086454358626914907, guid: 3e57f2dce30b84449bb1aca8049135c3, type: 3}
       propertyPath: sceneViews.Array.data[0].<LocalScale>k__BackingField.x
       value: 1
       objectReference: {fileID: 0}
