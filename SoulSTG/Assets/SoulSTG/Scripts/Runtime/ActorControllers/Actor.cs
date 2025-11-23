@@ -15,6 +15,8 @@ namespace SoulSTG.ActorControllers
         [SerializeField]
         private List<SerializableInterface<IActorAbility>> abilities = new();
 
+        private Dictionary<System.Type, IActorAbility> cachedAbilities = new();
+
         public readonly ActorEvent Event = new();
 
         void Awake()
@@ -22,17 +24,15 @@ namespace SoulSTG.ActorControllers
             foreach (var ability in abilities)
             {
                 ability.Value.Activate(this);
+                cachedAbilities[ability.Value.GetType()] = ability.Value;
             }
         }
 
         public T GetAbility<T>() where T : class, IActorAbility
         {
-            foreach (var ability in abilities)
+            if (cachedAbilities.TryGetValue(typeof(T), out var ability))
             {
-                if (ability.Value is T typedAbility)
-                {
-                    return typedAbility;
-                }
+                return (T)ability;
             }
 
             Assert.IsTrue(false, $"Ability of type {typeof(T)} not found on Actor {name}.");
@@ -41,13 +41,10 @@ namespace SoulSTG.ActorControllers
 
         public bool TryGetAbility<T>(out T ability) where T : class, IActorAbility
         {
-            foreach (var a in abilities)
+            if (cachedAbilities.TryGetValue(typeof(T), out var foundAbility))
             {
-                if (a.Value is T typedAbility)
-                {
-                    ability = typedAbility;
-                    return true;
-                }
+                ability = (T)foundAbility;
+                return true;
             }
 
             ability = null;
