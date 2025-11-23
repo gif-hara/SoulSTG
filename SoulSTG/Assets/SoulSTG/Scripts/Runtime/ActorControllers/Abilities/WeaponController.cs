@@ -38,6 +38,8 @@ namespace SoulSTG.ActorControllers.Abilities
                 return false;
             }
 
+            // TODO: 他の武器の攻撃も行えるようにする
+            weapons[0].Attack();
 
             return true;
         }
