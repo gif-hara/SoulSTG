@@ -6,5 +6,8 @@ namespace SoulSTG
     {
         [field: SerializeField]
         public LocatorHolder LocatorHolder { get; private set; }
+
+        [field: SerializeField]
+        public Animator Animator { get; private set; }
     }
 }
