@@ -1,12 +1,12 @@
-using VitalRouter;
+using R3.Notifications;
 
 namespace SoulSTG.ActorControllers
 {
     public class ActorEvent
     {
-        public readonly Router Router = new();
+        public MessageBroker Broker { get; } = new();
 
-        public readonly struct OnDie : ICommand
+        public readonly struct OnDie
         {
         }
     }

@@ -32,7 +32,7 @@ namespace SoulSTG.ActorControllers.Abilities
             currentHitPoint.Value -= damage;
             if (currentHitPoint.Value <= 0)
             {
-                actor.Event.Router.Publish(new ActorEvent.OnDie());
+                actor.Event.Broker.Publish(new ActorEvent.OnDie());
             }
         }
     }
