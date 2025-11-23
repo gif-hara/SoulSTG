@@ -13,5 +13,15 @@ namespace SoulSTG.ActorControllers.Abilities
         public readonly struct OnDie
         {
         }
+
+        public readonly struct Attack
+        {
+            public readonly string AttackId;
+
+            public Attack(string attackId)
+            {
+                AttackId = attackId;
+            }
+        }
     }
 }
