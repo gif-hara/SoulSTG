@@ -49,8 +49,32 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6086454358626914907, guid: 3e57f2dce30b84449bb1aca8049135c3, type: 3}
+      propertyPath: 'managedReferences[-2]'
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6086454358626914907, guid: 3e57f2dce30b84449bb1aca8049135c3, type: 3}
       propertyPath: sceneViews.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6086454358626914907, guid: 3e57f2dce30b84449bb1aca8049135c3, type: 3}
+      propertyPath: onAttackActions.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6086454358626914907, guid: 3e57f2dce30b84449bb1aca8049135c3, type: 3}
+      propertyPath: onAttackActions.Array.data[0].mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6086454358626914907, guid: 3e57f2dce30b84449bb1aca8049135c3, type: 3}
+      propertyPath: 'managedReferences[6509232517908004950]'
+      value: SoulSTG.Runtime SoulSTG.ActorControllers.Actions.AnimatorSetTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 6086454358626914907, guid: 3e57f2dce30b84449bb1aca8049135c3, type: 3}
+      propertyPath: onAttackActions.Array.data[0].rawReference
+      value: 6509232517908004950
+      objectReference: {fileID: 0}
+    - target: {fileID: 6086454358626914907, guid: 3e57f2dce30b84449bb1aca8049135c3, type: 3}
+      propertyPath: managedReferences[6509232517908004950].triggerName
+      value: Attack.Sword.1
       objectReference: {fileID: 0}
     - target: {fileID: 6086454358626914907, guid: 3e57f2dce30b84449bb1aca8049135c3, type: 3}
       propertyPath: sceneViews.Array.data[0].<SceneView>k__BackingField
