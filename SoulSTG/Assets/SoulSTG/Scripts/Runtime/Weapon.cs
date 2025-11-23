@@ -1,7 +1,10 @@
 using System;
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using SoulSTG.ActorControllers;
 using SoulSTG.ActorControllers.Abilities;
+using SoulSTG.ActorControllers.Actions;
+using TNRD;
 using UnityEngine;
 
 namespace SoulSTG.WeaponControllers
@@ -10,6 +13,14 @@ namespace SoulSTG.WeaponControllers
     {
         [SerializeField]
         private List<SceneViewElement> sceneViews = new();
+
+#if UNITY_EDITOR
+        [ClassesOnly]
+#endif
+        [SerializeField]
+        private List<SerializableInterface<IAction>> onAttackActions = new();
+
+        private Actor actor;
 
         [Serializable]
         public class SceneViewElement
@@ -32,6 +43,7 @@ namespace SoulSTG.WeaponControllers
 
         public void Activate(Actor actor)
         {
+            this.actor = actor;
             var locatorHolder = actor.GetAbility<SceneViewController>().SceneView.LocatorHolder;
 
             foreach (var sceneView in sceneViews)
@@ -41,6 +53,14 @@ namespace SoulSTG.WeaponControllers
                 sceneView.SceneView.localPosition = sceneView.LocalPosition;
                 sceneView.SceneView.localRotation = sceneView.LocalRotation;
                 sceneView.SceneView.localScale = sceneView.LocalScale;
+            }
+        }
+
+        public void Attack()
+        {
+            foreach (var action in onAttackActions)
+            {
+                action.Value.InvokeAsync(actor, actor.destroyCancellationToken).Forget();
             }
         }
     }
