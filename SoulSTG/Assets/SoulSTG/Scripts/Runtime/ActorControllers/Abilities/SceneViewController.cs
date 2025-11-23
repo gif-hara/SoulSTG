@@ -9,6 +9,7 @@ namespace SoulSTG.ActorControllers.Abilities
 
         public void Activate(Actor actor)
         {
+            SceneView.AnimationEvent.Activate(actor);
         }
     }
 }
